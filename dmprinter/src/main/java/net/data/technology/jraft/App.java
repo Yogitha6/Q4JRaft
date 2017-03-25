@@ -109,6 +109,9 @@ public class App
         while(true){
             System.out.print("Message:");
             String message = reader.readLine();
+            //if(message.startsWith("")){
+            //	
+            //}
             if(message.startsWith("addsrv")){
                 StringTokenizer tokenizer = new StringTokenizer(message, ";");
                 ArrayList<String> values = new ArrayList<String>();
