@@ -18,6 +18,7 @@
 package net.data.technology.jraft;
 
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;
@@ -343,6 +344,7 @@ public class RaftServer implements RaftMessageHandler {
                     this.logger.info("received a configuration change at index %d from leader", indexForEntry);
                     this.configChanging = true;
                 }else{
+                	//System.out.println("Precommit happening here");
                     this.stateMachine.preCommit(indexForEntry, logEntries[0].getValue());
                 }
             }
@@ -350,7 +352,10 @@ public class RaftServer implements RaftMessageHandler {
 
         this.leader = request.getSource();
         this.commit(request.getCommitIndex());
-        this.queues.qCreate(ByteBuffer.wrap(logEntries[0].getValue()).getInt());
+        //System.out.println("check check");
+        String message = new String(logEntries[0].getValue(), StandardCharsets.UTF_8);
+        //System.out.println(Integer.parseInt(message.trim()));
+        this.queues.qCreate(Integer.parseInt(message.trim()));
         response.setAccepted(true);
         response.setNextIndex(request.getLastLogIndex() + (request.getLogEntries() == null ? 0 : request.getLogEntries().length) + 1);
         return response;
@@ -1033,7 +1038,9 @@ public class RaftServer implements RaftMessageHandler {
                 logEntries == null ? 0 : logEntries.length,
                 commitIndex,
                 term);
-        String msg = "  "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +"  "; 
+        String msg = "  "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +"  ";
+        //System.out.println("Sending to followers");
+        //System.out.println(msg);
         logEntries[0] = new LogEntry(logEntries[0].getTerm(),msg.getBytes());
         RaftRequestMessage requestMessage = new RaftRequestMessage();
         requestMessage.setMessageType(RaftMessageType.QueueAppendEntriesRequest);
@@ -1406,10 +1413,11 @@ public class RaftServer implements RaftMessageHandler {
             term = this.state.getTerm();
         }
         int queueLabel = ByteBuffer.wrap(logEntries[0].getValue()).getInt();
+        //System.out.println("This is leader");
         String msg = "  "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +"  ";
         this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, msg.getBytes(),LogValueType.FTQueue)), msg.getBytes());
         this.requestQueueAppendEntries(queueLabel);
-        this.queues.qCreate(queueLabel);
+        this.queues.qCreate(ByteBuffer.wrap(msg.getBytes()).getInt());
         response.setAccepted(true);
         response.setNextIndex(this.logStore.getFirstAvailableIndex());
         return response;

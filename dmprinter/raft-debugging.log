@@ -15011,3 +15011,585 @@ java.nio.BufferUnderflowException
 2017-03-27 01:26:27 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=1858, NextIndex=322
 2017-03-27 01:26:27 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
 2017-03-27 01:26:27 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:30 DEBUG FileBasedSequentialLogStore.main - log store started with entriesInStore=321, startIndex=1
+2017-03-27 10:18:30 INFO  RaftServer.main - Server 4 started
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-1 - Election timeout, change to Candidate
+2017-03-27 10:18:34 INFO  RaftServer.pool-1-thread-1 - requestVote started with term 1859
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 1 with term 1859
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 2 with term 1859
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 3 with term 1859
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 3 at endpoint localhost/127.0.0.1:9003
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 10:18:34 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 2 with Result=false, Term=1891, NextIndex=0
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-1 - Receive a RequestVoteResponse message from peer 3 with Result=false, Term=1891, NextIndex=0
+2017-03-27 10:18:34 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 1 with Result=false, Term=1891, NextIndex=0
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-1 - Election timeout, change to Candidate
+2017-03-27 10:18:39 INFO  RaftServer.pool-1-thread-1 - requestVote started with term 1892
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 1 with term 1892
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 2 with term 1892
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 3 with term 1892
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 3 at endpoint localhost/127.0.0.1:9003
+2017-03-27 10:18:39 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 2 with Result=false, Term=1892, NextIndex=0
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteResponse message from peer 1 with Result=false, Term=1892, NextIndex=0
+2017-03-27 10:18:39 DEBUG RaftServer.pool-1-thread-7 - Receive a RequestVoteResponse message from peer 3 with Result=false, Term=1892, NextIndex=0
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a JoinClusterRequest message from 2 with LastLogIndex=384, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - system is reconfigured to have 3 servers, last config index: 0, this config index: 382
+2017-03-27 10:18:43 INFO  RaftServer.pool-1-thread-6 - peer 4 cannot be found in current peer list
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a JoinClusterResponse message to 2 with Accepted=true, Term=1893, NextIndex=322
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=6
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=5, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=11
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=10, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=16
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=15, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=21
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=20, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=26
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=25, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=31
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=30, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=36
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=35, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=41
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=40, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=46
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=45, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=51
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=50, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=56
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=55, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=61
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=60, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=66
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=65, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=71
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=70, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=76
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=75, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=81
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=80, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=86
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=85, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=91
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=90, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=96
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=95, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=101
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=100, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=106
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=105, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=111
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=110, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=116
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=115, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=121
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=120, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=126
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=125, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=131
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=130, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=136
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=135, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=141
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=140, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=146
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=145, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=151
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=150, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=156
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=155, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=161
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=160, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=166
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=165, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=171
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=170, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=176
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=175, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=181
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=180, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=186
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=185, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=191
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=190, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=196
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=195, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=201
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=200, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=206
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=205, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=211
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=210, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=216
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=215, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=221
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=220, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=226
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=225, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=231
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=230, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=236
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=235, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=241
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=240, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=246
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=245, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=251
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=250, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=256
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=255, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=261
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=260, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=266
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=265, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=271
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=270, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=276
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=275, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=281
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=280, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=286
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=285, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=291
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=290, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=296
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=295, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=301
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=300, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=306
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Receive a SyncLogRequest message from 2 with LastLogIndex=305, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-1 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=311
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=310, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=316
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=315, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=321
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=320, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=326
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=325, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=331
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=330, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=336
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 332 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Receive a SyncLogRequest message from 2 with LastLogIndex=335, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-3 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=341
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 339 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Receive a SyncLogRequest message from 2 with LastLogIndex=340, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-8 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=346
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 342 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=345, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=351
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Receive a SyncLogRequest message from 2 with LastLogIndex=350, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-2 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=356
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 351 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=355, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=361
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 354 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Receive a SyncLogRequest message from 2 with LastLogIndex=360, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-6 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=366
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 355 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Receive a SyncLogRequest message from 2 with LastLogIndex=365, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-4 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=371
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 359 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Receive a SyncLogRequest message from 2 with LastLogIndex=370, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-7 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=376
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 362 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Receive a SyncLogRequest message from 2 with LastLogIndex=375, LastLogTerm=0, EntriesLength=1, CommitIndex=384 and Term=1893
+2017-03-27 10:18:43 DEBUG RaftServer.pool-1-thread-5 - Response back a SyncLogResponse message to 2 with Accepted=true, Term=1893, NextIndex=381
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 365 is committed
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:18:43 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 369 is committed
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 372 is committed
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 375 is committed
+2017-03-27 10:18:43 INFO  RaftServer.Thread-3 - configuration at index 379 is committed
+2017-03-27 10:18:45 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:45 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=380, LastLogTerm=1890, EntriesLength=5, CommitIndex=385 and Term=1893
+2017-03-27 10:18:45 INFO  RaftServer.pool-1-thread-1 - received a configuration change at index 382 from leader
+2017-03-27 10:18:45 INFO  RaftServer.pool-1-thread-1 - received a configuration change at index 385 from leader
+2017-03-27 10:18:45 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:45 INFO  RaftServer.Thread-3 - configuration at index 382 is committed
+2017-03-27 10:18:45 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 10:18:45 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 10:18:45 INFO  RaftServer.Thread-3 - configuration at index 385 is committed
+2017-03-27 10:18:45 DEBUG RaftServer.Thread-3 - system is reconfigured to have 4 servers, last config index: 382, this config index: 385
+2017-03-27 10:18:45 INFO  RaftServer.Thread-3 - this server is committed as one of cluster members
+2017-03-27 10:18:46 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:18:46 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:46 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:46 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:46 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:48 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:48 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:48 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:48 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:48 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:49 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:49 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:49 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:49 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:18:49 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:18:51 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:18:51 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:51 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:51 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:18:51 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 10:18:52 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:18:52 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:52 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:52 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:52 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:54 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:18:54 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:54 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:54 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:54 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:18:55 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:55 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:55 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:55 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:18:55 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:18:57 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:18:57 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:57 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:57 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:18:57 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:18:58 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:18:58 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:18:58 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:18:58 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:18:58 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:19:00 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 10:19:00 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:19:00 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:19:00 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:19:00 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:19:01 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:19:01 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:19:01 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:19:01 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 10:19:01 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 10:19:03 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:19:03 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:19:03 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:19:03 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:19:03 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:19:04 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:19:04 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:19:04 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:19:04 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:19:04 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=0, CommitIndex=385 and Term=1893
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=386
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=385, LastLogTerm=1893, EntriesLength=1, CommitIndex=385 and Term=1893
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=0, CommitIndex=386 and Term=1893
+2017-03-27 10:19:06 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:19:06 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:19:07 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:19:07 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=0, CommitIndex=386 and Term=1893
+2017-03-27 10:19:07 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:07 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 10:19:07 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 10:19:09 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:19:09 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=0, CommitIndex=386 and Term=1893
+2017-03-27 10:19:09 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:09 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:19:09 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:19:10 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 10:19:10 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=0, CommitIndex=386 and Term=1893
+2017-03-27 10:19:10 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:10 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:19:10 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:19:12 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 10:19:12 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=0, CommitIndex=386 and Term=1893
+2017-03-27 10:19:12 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=1893, NextIndex=387
+2017-03-27 10:19:12 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:19:12 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:19:12 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:19:12 DEBUG RaftServer.pool-1-thread-8 - Receive a QueueAppendEntriesRequest message from 2 with LastLogIndex=386, LastLogTerm=1893, EntriesLength=1, CommitIndex=386 and Term=1893
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-2 - Election timeout, change to Candidate
+2017-03-27 10:19:58 INFO  RaftServer.pool-1-thread-2 - requestVote started with term 1894
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-2 - send RequestVoteRequest to server 1 with term 1894
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-2 - send RequestVoteRequest to server 2 with term 1894
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-2 - send RequestVoteRequest to server 3 with term 1894
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message RequestVoteRequest to server 3 at endpoint localhost/127.0.0.1:9003
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-6 - Receive a RequestVoteResponse message from peer 1 with Result=false, Term=1894, NextIndex=0
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-6 - Receive a RequestVoteResponse message from peer 2 with Result=false, Term=1894, NextIndex=0
+2017-03-27 10:19:58 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 10:19:58 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 3 with Result=false, Term=1894, NextIndex=0
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-6 - Receive a RequestVoteRequest message from 3 with LastLogIndex=388, LastLogTerm=1893, EntriesLength=0, CommitIndex=0 and Term=1895
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-6 - Response back a RequestVoteResponse message to 3 with Accepted=true, Term=1895, NextIndex=0
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 3 with LastLogIndex=388, LastLogTerm=1893, EntriesLength=0, CommitIndex=388 and Term=1895
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 3 with Accepted=false, Term=1895, NextIndex=388
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 3 with LastLogIndex=387, LastLogTerm=1893, EntriesLength=1, CommitIndex=388 and Term=1895
+2017-03-27 10:20:01 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=1895, NextIndex=389
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 10:20:01 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 10:20:03 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 10:20:03 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 3 with LastLogIndex=388, LastLogTerm=1893, EntriesLength=0, CommitIndex=388 and Term=1895
+2017-03-27 10:20:03 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=1895, NextIndex=389
+2017-03-27 10:20:03 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 10:20:03 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 10:20:04 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 10:20:04 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 3 with LastLogIndex=388, LastLogTerm=1893, EntriesLength=0, CommitIndex=388 and Term=1895
+2017-03-27 10:20:04 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=1895, NextIndex=389
+2017-03-27 10:20:04 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 10:20:04 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request

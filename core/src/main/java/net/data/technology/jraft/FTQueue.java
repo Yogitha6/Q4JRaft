@@ -16,6 +16,7 @@ public FTQueue()
 //Creates a new queue of integers; associates this queue with label and returns a queue id int
 public int qCreate(int label)
 {
+	System.out.println(label);
 	counter = counter + 1;
 	MyQueue queue = new MyQueue(20, label);
 	System.out.println("Queue has been created");
