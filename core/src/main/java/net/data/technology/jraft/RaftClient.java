@@ -65,6 +65,27 @@ public class RaftClient {
         this.tryCurrentLeader(request, result, 0, 0);
         return result;
     }
+    
+	public CompletableFuture<Boolean> qCreate(int queueLabel) {
+			
+			if(queueLabel < 0)
+			{
+				throw new IllegalArgumentException("Queue Label must be equal or greater than zero");
+			}
+			
+			ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
+			buffer.putInt(queueLabel);
+			LogEntry[] logEntries = new LogEntry[1];
+			logEntries[0] = new LogEntry(0, buffer.array(), LogValueType.FTQueue);
+			RaftRequestMessage request = new RaftRequestMessage();
+	        request.setMessageType(RaftMessageType.QueueCreateRequest);
+	        request.setLogEntries(logEntries);
+	        
+	        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+	        this.tryCurrentLeader(request, result, 0, 0);
+	        return result;
+		}
+
 
     public CompletableFuture<Boolean> addServer(ClusterServer server){
         if(server == null){

@@ -41,4 +41,6 @@ public interface RaftMessageSender {
      * @return true if request is accepted or false if no leader, rpc fails or leader declines
      */
     CompletableFuture<Boolean> appendEntries(byte[][] values);
+
+	CompletableFuture<Boolean> qCreate(int queueLabel);
 }

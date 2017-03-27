@@ -72,6 +72,17 @@ public enum LogValueType {
         public byte toByte(){
             return 5;
         }
+    },
+    
+
+    /**
+     * Log value is queue label
+     */
+    FTQueue {
+        @Override
+        public byte toByte(){
+            return 6;
+        }
     };
 
     /**
@@ -97,6 +108,8 @@ public enum LogValueType {
             return LogPack;
         case 5:
             return SnapshotSyncRequest;
+        case 6:
+        	return FTQueue;
         default:
             throw new IllegalArgumentException(String.format("%d is not defined for LogValueType", b));
         }

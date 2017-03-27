@@ -109,9 +109,13 @@ public class App
         while(true){
             System.out.print("Message:");
             String message = reader.readLine();
-            //if(message.startsWith("")){
-            //	
-            //}
+            if(message.startsWith("qCreate:")){
+            	String text = message.substring(8);
+            	int queueLabel = Integer.parseInt(text.trim());
+            	boolean accepted = client.qCreate(queueLabel).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
+            }
             if(message.startsWith("addsrv")){
                 StringTokenizer tokenizer = new StringTokenizer(message, ";");
                 ArrayList<String> values = new ArrayList<String>();

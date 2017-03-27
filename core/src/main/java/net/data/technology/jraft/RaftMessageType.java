@@ -205,6 +205,50 @@ public enum RaftMessageType {
         public byte toByte(){
             return (byte)17;
         }
+    },
+    QueueCreateRequest {
+        @Override
+        public String toString(){
+            return "QueueCreateRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)18;
+        }
+    },
+    QueueCreateResponse {
+        @Override
+        public String toString(){
+            return "QueueCreateResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)19;
+        }
+    },
+    QueueAppendEntriesRequest{
+        @Override
+        public String toString(){
+            return "QueueAppendEntriesRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)20;
+        }
+    },
+    QueueAppendEntriesResponse{
+    	@Override
+        public String toString(){
+            return "QueueAppendEntriesResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)21;
+        }
     };
 
     public abstract byte toByte();
@@ -245,6 +289,14 @@ public enum RaftMessageType {
             return InstallSnapshotRequest;
         case 17:
             return InstallSnapshotResponse;
+        case 18:
+        	return QueueCreateRequest;
+        case 19:
+        	return QueueCreateResponse;
+        case 20:
+        	return QueueAppendEntriesRequest;
+        case 21:
+        	return QueueAppendEntriesResponse;
         }
 
         throw new IllegalArgumentException("the value for the message type is not defined");
