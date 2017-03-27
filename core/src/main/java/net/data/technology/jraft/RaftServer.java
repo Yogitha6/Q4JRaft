@@ -1033,7 +1033,7 @@ public class RaftServer implements RaftMessageHandler {
                 logEntries == null ? 0 : logEntries.length,
                 commitIndex,
                 term);
-        String msg = "Queue with label "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +" has been created"; 
+        String msg = "  "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +"  "; 
         logEntries[0] = new LogEntry(logEntries[0].getTerm(),msg.getBytes());
         RaftRequestMessage requestMessage = new RaftRequestMessage();
         requestMessage.setMessageType(RaftMessageType.QueueAppendEntriesRequest);
@@ -1390,7 +1390,7 @@ public class RaftServer implements RaftMessageHandler {
         response.setSource(this.id);
         response.setDestination(this.leader);
         response.setTerm(this.state.getTerm());
-        response.setMessageType(RaftMessageType.QueueCreateResponse);        
+        response.setMessageType(RaftMessageType.QueueAppendEntriesResponse);        
         response.setNextIndex(this.logStore.getFirstAvailableIndex());
         response.setAccepted(false);
         if(logEntries.length != 1 || logEntries[0].getValue() == null || logEntries[0].getValue().length != Integer.BYTES){
@@ -1406,12 +1406,10 @@ public class RaftServer implements RaftMessageHandler {
             term = this.state.getTerm();
         }
         int queueLabel = ByteBuffer.wrap(logEntries[0].getValue()).getInt();
-        //String msg = "Queue Creation with label "+ queueLabel; 
-        //String msg2 = "Queue with label "+queueLabel+" has been created";
-        //this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, logEntries[i].getValue())), logEntries[i].getValue());
-        System.out.println("This is leader");
-        this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, logEntries[0].getValue())), logEntries[0].getValue());
+        String msg = "  "+ ByteBuffer.wrap(logEntries[0].getValue()).getInt() +"  ";
+        this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, msg.getBytes(),LogValueType.FTQueue)), msg.getBytes());
         this.requestQueueAppendEntries(queueLabel);
+        this.queues.qCreate(queueLabel);
         response.setAccepted(true);
         response.setNextIndex(this.logStore.getFirstAvailableIndex());
         return response;
@@ -1885,7 +1883,10 @@ public class RaftServer implements RaftMessageHandler {
                         LogEntry logEntry = server.logStore.getLogEntryAt(currentCommitIndex);
                         if(logEntry.getValueType() == LogValueType.Application){
                             server.stateMachine.commit(currentCommitIndex, logEntry.getValue());
-                        }else if(logEntry.getValueType() == LogValueType.Configuration){
+                        }else if(logEntry.getValueType() == LogValueType.FTQueue){
+                        	server.stateMachine.commit(currentCommitIndex, logEntry.getValue());
+                        }
+                        else if(logEntry.getValueType() == LogValueType.Configuration){
                             synchronized(server){
                                 ClusterConfiguration newConfig = ClusterConfiguration.fromBytes(logEntry.getValue());
                                 server.logger.info("configuration at index %d is committed", newConfig.getLogIndex());

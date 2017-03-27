@@ -18,6 +18,7 @@ public int qCreate(int label)
 {
 	counter = counter + 1;
 	MyQueue queue = new MyQueue(20, label);
+	System.out.println("Queue has been created");
 	ftqueues.put(counter, queue);
 	return counter;
 }
