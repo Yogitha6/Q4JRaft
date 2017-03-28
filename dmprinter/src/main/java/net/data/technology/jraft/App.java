@@ -111,8 +111,7 @@ public class App
             String message = reader.readLine();
             if(message.startsWith("qCreate:")){
             	String text = message.substring(8);
-            	int queueLabel = Integer.parseInt(text.trim());
-            	boolean accepted = client.qCreate(queueLabel).get();
+            	boolean accepted = client.qCreate(new byte[][]{ text.trim().getBytes()}).get();
             	System.out.println("Accepted: " + String.valueOf(accepted));
             	continue;
             }

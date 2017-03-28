@@ -66,17 +66,16 @@ public class RaftClient {
         return result;
     }
     
-	public CompletableFuture<Boolean> qCreate(int queueLabel) {
+	public CompletableFuture<Boolean> qCreate(byte[][] values) {
 			
-			if(queueLabel < 0)
-			{
+		if(values == null || values.length < 0){
 				throw new IllegalArgumentException("Queue Label must be equal or greater than zero");
 			}
 			
-			ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
-			buffer.putInt(queueLabel);
-			LogEntry[] logEntries = new LogEntry[1];
-			logEntries[0] = new LogEntry(0, buffer.array(), LogValueType.FTQueue);
+		    LogEntry[] logEntries = new LogEntry[values.length];
+		    for(int i = 0; i < values.length; ++i){
+	            logEntries[i] = new LogEntry(0, values[i],LogValueType.FTQueue);
+	        }
 			RaftRequestMessage request = new RaftRequestMessage();
 	        request.setMessageType(RaftMessageType.QueueCreateRequest);
 	        request.setLogEntries(logEntries);
