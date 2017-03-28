@@ -171,6 +171,12 @@ public class RaftServer implements RaftMessageHandler {
             response = this.handleQueueIdAppendEntriesRequest(request);
         }else if(request.getMessageType() == RaftMessageType.QueuePushAppendEntriesRequest){
             response = this.handleQueuePushAppendEntriesRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueuePopAppendEntriesRequest){
+            response = this.handleQueuePopAppendEntriesRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueueTopAppendEntriesRequest){
+            response = this.handleQueueTopAppendEntriesRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueueSizeAppendEntriesRequest){
+            response = this.handleQueueSizeAppendEntriesRequest(request);
         }else if(request.getMessageType() == RaftMessageType.RequestVoteRequest){
             response = this.handleVoteRequest(request);
         }else if(request.getMessageType() == RaftMessageType.ClientRequest){
@@ -181,6 +187,12 @@ public class RaftServer implements RaftMessageHandler {
         	response = this.handleQueueIdRequest(request);
         }else if(request.getMessageType() == RaftMessageType.QueuePushCreateRequest){
         	response = this.handleQueuePushRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueuePopCreateRequest){
+        	response = this.handleQueuePopRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueueTopCreateRequest){
+        	response = this.handleQueueTopRequest(request);
+        }else if(request.getMessageType() == RaftMessageType.QueueSizeCreateRequest){
+        	response = this.handleQueueSizeRequest(request);
         }else{
             // extended requests
             response = this.handleExtendedMessages(request);
@@ -540,6 +552,261 @@ public class RaftServer implements RaftMessageHandler {
         return response;
     }
     
+    private synchronized RaftResponseMessage handleQueuePopAppendEntriesRequest(RaftRequestMessage request){
+        // we allow the server to be continue after term updated to save a round message
+        this.updateTerm(request.getTerm());
+
+        // Reset stepping down value to prevent this server goes down when leader crashes after sending a LeaveClusterRequest
+        if(this.steppingDown > 0){
+            this.steppingDown = 2;
+        }
+        
+        if(request.getTerm() == this.state.getTerm()){
+            if(this.role == ServerRole.Candidate){
+                this.becomeFollower();
+            }else if(this.role == ServerRole.Leader){
+                this.logger.error("Receive AppendEntriesRequest from another leader(%d) with same term, there must be a bug, server exits", request.getSource());
+                this.stateMachine.exit(-1);
+            }else{
+                this.restartElectionTimer();
+            }
+        }
+
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setMessageType(RaftMessageType.QueuePopAppendEntriesResponse);
+        response.setTerm(this.state.getTerm());
+        response.setSource(this.id);
+        response.setDestination(request.getSource());
+
+        LogEntry[] logEntries = request.getLogEntries();
+        // After a snapshot the request.getLastLogIndex() may less than logStore.getStartingIndex() but equals to logStore.getStartingIndex() -1
+        // In this case, log is Okay if request.getLastLogIndex() == lastSnapshot.getLastLogIndex() && request.getLastLogTerm() == lastSnapshot.getLastTerm()
+        boolean logOkay = request.getLastLogIndex() == 0 ||
+                (request.getLastLogIndex() < this.logStore.getFirstAvailableIndex() &&
+                        request.getLastLogTerm() == this.termForLastLog(request.getLastLogIndex()));
+        if(request.getTerm() < this.state.getTerm() || !logOkay){
+            response.setAccepted(false);
+            response.setNextIndex(this.logStore.getFirstAvailableIndex());
+            return response;
+        }
+
+        // The role is Follower and log is okay now
+        if(request.getLogEntries() != null && request.getLogEntries().length > 0){
+            // write the logs to the store, first of all, check for overlap, and skip them
+            long index = request.getLastLogIndex() + 1;
+            int logIndex = 0;
+            while(index < this.logStore.getFirstAvailableIndex() &&
+                    logIndex < logEntries.length &&
+                    logEntries[logIndex].getTerm() == this.logStore.getLogEntryAt(index).getTerm()){
+                logIndex ++;
+                index ++;
+            }
+
+            // dealing with overwrites
+            while(index < this.logStore.getFirstAvailableIndex() && logIndex < logEntries.length){
+                LogEntry oldEntry = this.logStore.getLogEntryAt(index);
+                if(oldEntry.getValueType() == LogValueType.Application){
+                    this.stateMachine.rollback(index, oldEntry.getValue());
+                }else if(oldEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("revert a previous config change to config at %d", this.config.getLogIndex());
+                    this.configChanging = false;
+                }
+
+                this.logStore.writeAt(index ++, logEntries[logIndex ++]);
+            }
+
+            // append the new log entries
+            while(logIndex < logEntries.length){
+                LogEntry logEntry = logEntries[logIndex ++];
+                long indexForEntry = this.logStore.append(logEntry);
+                if(logEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("received a configuration change at index %d from leader", indexForEntry);
+                    this.configChanging = true;
+                }else{
+                    this.stateMachine.preCommit(indexForEntry, logEntries[0].getValue());
+                }
+            }
+        }
+
+        this.leader = request.getSource();
+        this.commit(request.getCommitIndex());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.queues.qPop(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(request.getLastLogIndex() + (request.getLogEntries() == null ? 0 : request.getLogEntries().length) + 1);
+        return response;
+        }
+    
+    private synchronized RaftResponseMessage handleQueueTopAppendEntriesRequest(RaftRequestMessage request){
+        // we allow the server to be continue after term updated to save a round message
+        this.updateTerm(request.getTerm());
+
+        // Reset stepping down value to prevent this server goes down when leader crashes after sending a LeaveClusterRequest
+        if(this.steppingDown > 0){
+            this.steppingDown = 2;
+        }
+        
+        if(request.getTerm() == this.state.getTerm()){
+            if(this.role == ServerRole.Candidate){
+                this.becomeFollower();
+            }else if(this.role == ServerRole.Leader){
+                this.logger.error("Receive AppendEntriesRequest from another leader(%d) with same term, there must be a bug, server exits", request.getSource());
+                this.stateMachine.exit(-1);
+            }else{
+                this.restartElectionTimer();
+            }
+        }
+
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setMessageType(RaftMessageType.QueueTopAppendEntriesResponse);
+        response.setTerm(this.state.getTerm());
+        response.setSource(this.id);
+        response.setDestination(request.getSource());
+
+        LogEntry[] logEntries = request.getLogEntries();
+        // After a snapshot the request.getLastLogIndex() may less than logStore.getStartingIndex() but equals to logStore.getStartingIndex() -1
+        // In this case, log is Okay if request.getLastLogIndex() == lastSnapshot.getLastLogIndex() && request.getLastLogTerm() == lastSnapshot.getLastTerm()
+        boolean logOkay = request.getLastLogIndex() == 0 ||
+                (request.getLastLogIndex() < this.logStore.getFirstAvailableIndex() &&
+                        request.getLastLogTerm() == this.termForLastLog(request.getLastLogIndex()));
+        if(request.getTerm() < this.state.getTerm() || !logOkay){
+            response.setAccepted(false);
+            response.setNextIndex(this.logStore.getFirstAvailableIndex());
+            return response;
+        }
+
+        // The role is Follower and log is okay now
+        if(request.getLogEntries() != null && request.getLogEntries().length > 0){
+            // write the logs to the store, first of all, check for overlap, and skip them
+            long index = request.getLastLogIndex() + 1;
+            int logIndex = 0;
+            while(index < this.logStore.getFirstAvailableIndex() &&
+                    logIndex < logEntries.length &&
+                    logEntries[logIndex].getTerm() == this.logStore.getLogEntryAt(index).getTerm()){
+                logIndex ++;
+                index ++;
+            }
+
+            // dealing with overwrites
+            while(index < this.logStore.getFirstAvailableIndex() && logIndex < logEntries.length){
+                LogEntry oldEntry = this.logStore.getLogEntryAt(index);
+                if(oldEntry.getValueType() == LogValueType.Application){
+                    this.stateMachine.rollback(index, oldEntry.getValue());
+                }else if(oldEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("revert a previous config change to config at %d", this.config.getLogIndex());
+                    this.configChanging = false;
+                }
+
+                this.logStore.writeAt(index ++, logEntries[logIndex ++]);
+            }
+
+            // append the new log entries
+            while(logIndex < logEntries.length){
+                LogEntry logEntry = logEntries[logIndex ++];
+                long indexForEntry = this.logStore.append(logEntry);
+                if(logEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("received a configuration change at index %d from leader", indexForEntry);
+                    this.configChanging = true;
+                }else{
+                    this.stateMachine.preCommit(indexForEntry, logEntries[0].getValue());
+                }
+            }
+        }
+
+        this.leader = request.getSource();
+        this.commit(request.getCommitIndex());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.queues.qTop(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(request.getLastLogIndex() + (request.getLogEntries() == null ? 0 : request.getLogEntries().length) + 1);
+        return response;
+    }
+    
+    private synchronized RaftResponseMessage handleQueueSizeAppendEntriesRequest(RaftRequestMessage request){
+        // we allow the server to be continue after term updated to save a round message
+        this.updateTerm(request.getTerm());
+
+        // Reset stepping down value to prevent this server goes down when leader crashes after sending a LeaveClusterRequest
+        if(this.steppingDown > 0){
+            this.steppingDown = 2;
+        }
+        
+        if(request.getTerm() == this.state.getTerm()){
+            if(this.role == ServerRole.Candidate){
+                this.becomeFollower();
+            }else if(this.role == ServerRole.Leader){
+                this.logger.error("Receive AppendEntriesRequest from another leader(%d) with same term, there must be a bug, server exits", request.getSource());
+                this.stateMachine.exit(-1);
+            }else{
+                this.restartElectionTimer();
+            }
+        }
+
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setMessageType(RaftMessageType.QueueSizeAppendEntriesResponse);
+        response.setTerm(this.state.getTerm());
+        response.setSource(this.id);
+        response.setDestination(request.getSource());
+
+        LogEntry[] logEntries = request.getLogEntries();
+        // After a snapshot the request.getLastLogIndex() may less than logStore.getStartingIndex() but equals to logStore.getStartingIndex() -1
+        // In this case, log is Okay if request.getLastLogIndex() == lastSnapshot.getLastLogIndex() && request.getLastLogTerm() == lastSnapshot.getLastTerm()
+        boolean logOkay = request.getLastLogIndex() == 0 ||
+                (request.getLastLogIndex() < this.logStore.getFirstAvailableIndex() &&
+                        request.getLastLogTerm() == this.termForLastLog(request.getLastLogIndex()));
+        if(request.getTerm() < this.state.getTerm() || !logOkay){
+            response.setAccepted(false);
+            response.setNextIndex(this.logStore.getFirstAvailableIndex());
+            return response;
+        }
+
+        // The role is Follower and log is okay now
+        if(request.getLogEntries() != null && request.getLogEntries().length > 0){
+            // write the logs to the store, first of all, check for overlap, and skip them
+            long index = request.getLastLogIndex() + 1;
+            int logIndex = 0;
+            while(index < this.logStore.getFirstAvailableIndex() &&
+                    logIndex < logEntries.length &&
+                    logEntries[logIndex].getTerm() == this.logStore.getLogEntryAt(index).getTerm()){
+                logIndex ++;
+                index ++;
+            }
+
+            // dealing with overwrites
+            while(index < this.logStore.getFirstAvailableIndex() && logIndex < logEntries.length){
+                LogEntry oldEntry = this.logStore.getLogEntryAt(index);
+                if(oldEntry.getValueType() == LogValueType.Application){
+                    this.stateMachine.rollback(index, oldEntry.getValue());
+                }else if(oldEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("revert a previous config change to config at %d", this.config.getLogIndex());
+                    this.configChanging = false;
+                }
+
+                this.logStore.writeAt(index ++, logEntries[logIndex ++]);
+            }
+
+            // append the new log entries
+            while(logIndex < logEntries.length){
+                LogEntry logEntry = logEntries[logIndex ++];
+                long indexForEntry = this.logStore.append(logEntry);
+                if(logEntry.getValueType() == LogValueType.Configuration){
+                    this.logger.info("received a configuration change at index %d from leader", indexForEntry);
+                    this.configChanging = true;
+                }else{
+                    this.stateMachine.preCommit(indexForEntry, logEntries[0].getValue());
+                }
+            }
+        }
+
+        this.leader = request.getSource();
+        this.commit(request.getCommitIndex());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.queues.qSize(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(request.getLastLogIndex() + (request.getLogEntries() == null ? 0 : request.getLogEntries().length) + 1);
+        return response;
+    }
+    
     private synchronized RaftResponseMessage handleVoteRequest(RaftRequestMessage request){
         // we allow the server to be continue after term updated to save a round message
         this.updateTerm(request.getTerm());
@@ -756,6 +1023,42 @@ public class RaftServer implements RaftMessageHandler {
                 }, this.context.getScheduledExecutor());
             return true;
         	}
+        	else if(task=="pop")
+        	{
+        		peer.SendRequest(this.createQueuePopAppendEntriesRequest(peer))
+                .whenCompleteAsync((RaftResponseMessage response, Throwable error) -> {
+                    try{
+                        handlePeerResponse(response, error);
+                    }catch(Throwable err){
+                        this.logger.error("Uncaught exception %s", err.toString());
+                    }
+                }, this.context.getScheduledExecutor());
+            return true;
+        	}
+        	else if(task=="top")
+        	{
+        		peer.SendRequest(this.createQueueTopAppendEntriesRequest(peer))
+                .whenCompleteAsync((RaftResponseMessage response, Throwable error) -> {
+                    try{
+                        handlePeerResponse(response, error);
+                    }catch(Throwable err){
+                        this.logger.error("Uncaught exception %s", err.toString());
+                    }
+                }, this.context.getScheduledExecutor());
+            return true;
+        	}
+        	else if(task=="size")
+        	{
+        		peer.SendRequest(this.createQueueSizeAppendEntriesRequest(peer))
+                .whenCompleteAsync((RaftResponseMessage response, Throwable error) -> {
+                    try{
+                        handlePeerResponse(response, error);
+                    }catch(Throwable err){
+                        this.logger.error("Uncaught exception %s", err.toString());
+                    }
+                }, this.context.getScheduledExecutor());
+            return true;
+        	}
         }
 
         this.logger.debug("Server %d is busy, skip the request", peer.getId());
@@ -795,6 +1098,12 @@ public class RaftServer implements RaftMessageHandler {
             this.handleQueueIdAppendEntriesResponse(response);
         }else if(response.getMessageType() == RaftMessageType.QueuePushAppendEntriesResponse){
             this.handleQueuePushAppendEntriesResponse(response);
+        }else if(response.getMessageType() == RaftMessageType.QueuePopAppendEntriesResponse){
+            this.handleQueuePopAppendEntriesResponse(response);
+        }else if(response.getMessageType() == RaftMessageType.QueueTopAppendEntriesResponse){
+            this.handleQueueTopAppendEntriesResponse(response);
+        }else if(response.getMessageType() == RaftMessageType.QueueSizeAppendEntriesResponse){
+            this.handleQueueSizeAppendEntriesResponse(response);
         }else if(response.getMessageType() == RaftMessageType.InstallSnapshotResponse){
             this.handleInstallSnapshotResponse(response);
         }else{
@@ -976,6 +1285,138 @@ public class RaftServer implements RaftMessageHandler {
         // Try to match up the logs for this peer
         if(this.role == ServerRole.Leader && needToCatchup){
             this.requestQueueAppendEntries(peer, "push");
+        }
+    }
+    
+    private void handleQueuePopAppendEntriesResponse(RaftResponseMessage response){
+        PeerServer peer = this.peers.get(response.getSource());
+        if(peer == null){
+            this.logger.info("the response is from an unkonw peer %d", response.getSource());
+            return;
+        }
+
+        // If there are pending logs to be synced or commit index need to be advanced, continue to send appendEntries to this peer
+        boolean needToCatchup = true;
+        if(response.isAccepted()){
+            synchronized(peer){
+                peer.setNextLogIndex(response.getNextIndex());
+                peer.setMatchedIndex(response.getNextIndex() - 1);
+            }
+
+            // try to commit with this response
+            ArrayList<Long> matchedIndexes = new ArrayList<Long>(this.peers.size() + 1);
+            matchedIndexes.add(this.logStore.getFirstAvailableIndex() - 1);
+            for(PeerServer p : this.peers.values()){
+                matchedIndexes.add(p.getMatchedIndex());
+            }
+
+            matchedIndexes.sort(indexComparator);
+            this.commit(matchedIndexes.get((this.peers.size() + 1) / 2));
+            needToCatchup = peer.clearPendingCommit() || response.getNextIndex() < this.logStore.getFirstAvailableIndex();
+        }else{
+            synchronized(peer){
+                // Improvement: if peer's real log length is less than was assumed, reset to that length directly
+                if(response.getNextIndex() > 0 && peer.getNextLogIndex() > response.getNextIndex()){
+                    peer.setNextLogIndex(response.getNextIndex());
+                }else{
+                    peer.setNextLogIndex(peer.getNextLogIndex() - 1);
+                }
+            }
+        }
+
+        // This may not be a leader anymore, such as the response was sent out long time ago
+        // and the role was updated by UpdateTerm call
+        // Try to match up the logs for this peer
+        if(this.role == ServerRole.Leader && needToCatchup){
+            this.requestQueueAppendEntries(peer, "pop");
+        }
+    }
+    
+    private void handleQueueTopAppendEntriesResponse(RaftResponseMessage response){
+        PeerServer peer = this.peers.get(response.getSource());
+        if(peer == null){
+            this.logger.info("the response is from an unkonw peer %d", response.getSource());
+            return;
+        }
+
+        // If there are pending logs to be synced or commit index need to be advanced, continue to send appendEntries to this peer
+        boolean needToCatchup = true;
+        if(response.isAccepted()){
+            synchronized(peer){
+                peer.setNextLogIndex(response.getNextIndex());
+                peer.setMatchedIndex(response.getNextIndex() - 1);
+            }
+
+            // try to commit with this response
+            ArrayList<Long> matchedIndexes = new ArrayList<Long>(this.peers.size() + 1);
+            matchedIndexes.add(this.logStore.getFirstAvailableIndex() - 1);
+            for(PeerServer p : this.peers.values()){
+                matchedIndexes.add(p.getMatchedIndex());
+            }
+
+            matchedIndexes.sort(indexComparator);
+            this.commit(matchedIndexes.get((this.peers.size() + 1) / 2));
+            needToCatchup = peer.clearPendingCommit() || response.getNextIndex() < this.logStore.getFirstAvailableIndex();
+        }else{
+            synchronized(peer){
+                // Improvement: if peer's real log length is less than was assumed, reset to that length directly
+                if(response.getNextIndex() > 0 && peer.getNextLogIndex() > response.getNextIndex()){
+                    peer.setNextLogIndex(response.getNextIndex());
+                }else{
+                    peer.setNextLogIndex(peer.getNextLogIndex() - 1);
+                }
+            }
+        }
+
+        // This may not be a leader anymore, such as the response was sent out long time ago
+        // and the role was updated by UpdateTerm call
+        // Try to match up the logs for this peer
+        if(this.role == ServerRole.Leader && needToCatchup){
+            this.requestQueueAppendEntries(peer, "top");
+        }
+    }
+    
+    private void handleQueueSizeAppendEntriesResponse(RaftResponseMessage response){
+        PeerServer peer = this.peers.get(response.getSource());
+        if(peer == null){
+            this.logger.info("the response is from an unkonw peer %d", response.getSource());
+            return;
+        }
+
+        // If there are pending logs to be synced or commit index need to be advanced, continue to send appendEntries to this peer
+        boolean needToCatchup = true;
+        if(response.isAccepted()){
+            synchronized(peer){
+                peer.setNextLogIndex(response.getNextIndex());
+                peer.setMatchedIndex(response.getNextIndex() - 1);
+            }
+
+            // try to commit with this response
+            ArrayList<Long> matchedIndexes = new ArrayList<Long>(this.peers.size() + 1);
+            matchedIndexes.add(this.logStore.getFirstAvailableIndex() - 1);
+            for(PeerServer p : this.peers.values()){
+                matchedIndexes.add(p.getMatchedIndex());
+            }
+
+            matchedIndexes.sort(indexComparator);
+            this.commit(matchedIndexes.get((this.peers.size() + 1) / 2));
+            needToCatchup = peer.clearPendingCommit() || response.getNextIndex() < this.logStore.getFirstAvailableIndex();
+        }else{
+            synchronized(peer){
+                // Improvement: if peer's real log length is less than was assumed, reset to that length directly
+                if(response.getNextIndex() > 0 && peer.getNextLogIndex() > response.getNextIndex()){
+                    peer.setNextLogIndex(response.getNextIndex());
+                }else{
+                    peer.setNextLogIndex(peer.getNextLogIndex() - 1);
+                }
+            }
+        }
+
+        // This may not be a leader anymore, such as the response was sent out long time ago
+        // and the role was updated by UpdateTerm call
+        // Try to match up the logs for this peer
+        if(this.role == ServerRole.Leader && needToCatchup){
+            this.requestQueueAppendEntries(peer, "size");
         }
     }
     
@@ -1458,6 +1899,172 @@ public class RaftServer implements RaftMessageHandler {
         requestMessage.setTerm(term);
         return requestMessage;
     }
+    
+    private RaftRequestMessage createQueuePopAppendEntriesRequest(PeerServer peer){
+        long currentNextIndex = 0;
+        long commitIndex = 0;
+        long lastLogIndex = 0;
+        long term = 0;
+        long startingIndex = 1;
+
+        synchronized(this){
+            startingIndex = this.logStore.getStartIndex();
+            currentNextIndex = this.logStore.getFirstAvailableIndex();
+            commitIndex = this.quickCommitIndex;
+            term = this.state.getTerm();
+        }
+
+        synchronized(peer){
+            if(peer.getNextLogIndex() == 0){
+                peer.setNextLogIndex(currentNextIndex);
+            }
+
+            lastLogIndex = peer.getNextLogIndex() - 1;
+        }
+
+        if(lastLogIndex >= currentNextIndex){
+            this.logger.error("Peer's lastLogIndex is too large %d v.s. %d, server exits", lastLogIndex, currentNextIndex);
+            this.stateMachine.exit(-1);
+        }
+
+        // for syncing the snapshots, if the lastLogIndex == lastSnapshot.getLastLogIndex, we could get the term from the snapshot
+        if(lastLogIndex > 0 && lastLogIndex < startingIndex - 1){
+            return this.createSyncSnapshotRequest(peer, lastLogIndex, term, commitIndex);
+        }
+
+        long lastLogTerm = this.termForLastLog(lastLogIndex);
+        long endIndex = Math.min(currentNextIndex, lastLogIndex + 1 + context.getRaftParameters().getMaximumAppendingSize());
+        LogEntry[] logEntries = (lastLogIndex + 1) >= endIndex ? null : this.logStore.getLogEntries(lastLogIndex + 1, endIndex);
+        this.logger.debug(
+                "An AppendEntries Request for %d with LastLogIndex=%d, LastLogTerm=%d, EntriesLength=%d, CommitIndex=%d and Term=%d",
+                peer.getId(),
+                lastLogIndex,
+                lastLogTerm,
+                logEntries == null ? 0 : logEntries.length,
+                commitIndex,
+                term);
+        RaftRequestMessage requestMessage = new RaftRequestMessage();
+        requestMessage.setMessageType(RaftMessageType.QueuePopAppendEntriesRequest);
+        requestMessage.setSource(this.id);
+        requestMessage.setDestination(peer.getId());
+        requestMessage.setLastLogIndex(lastLogIndex);
+        requestMessage.setLastLogTerm(lastLogTerm);
+        requestMessage.setLogEntries(logEntries);
+        requestMessage.setCommitIndex(commitIndex);
+        requestMessage.setTerm(term);
+        return requestMessage;
+    }
+    
+    private RaftRequestMessage createQueueTopAppendEntriesRequest(PeerServer peer){
+        long currentNextIndex = 0;
+        long commitIndex = 0;
+        long lastLogIndex = 0;
+        long term = 0;
+        long startingIndex = 1;
+
+        synchronized(this){
+            startingIndex = this.logStore.getStartIndex();
+            currentNextIndex = this.logStore.getFirstAvailableIndex();
+            commitIndex = this.quickCommitIndex;
+            term = this.state.getTerm();
+        }
+
+        synchronized(peer){
+            if(peer.getNextLogIndex() == 0){
+                peer.setNextLogIndex(currentNextIndex);
+            }
+
+            lastLogIndex = peer.getNextLogIndex() - 1;
+        }
+
+        if(lastLogIndex >= currentNextIndex){
+            this.logger.error("Peer's lastLogIndex is too large %d v.s. %d, server exits", lastLogIndex, currentNextIndex);
+            this.stateMachine.exit(-1);
+        }
+
+        // for syncing the snapshots, if the lastLogIndex == lastSnapshot.getLastLogIndex, we could get the term from the snapshot
+        if(lastLogIndex > 0 && lastLogIndex < startingIndex - 1){
+            return this.createSyncSnapshotRequest(peer, lastLogIndex, term, commitIndex);
+        }
+
+        long lastLogTerm = this.termForLastLog(lastLogIndex);
+        long endIndex = Math.min(currentNextIndex, lastLogIndex + 1 + context.getRaftParameters().getMaximumAppendingSize());
+        LogEntry[] logEntries = (lastLogIndex + 1) >= endIndex ? null : this.logStore.getLogEntries(lastLogIndex + 1, endIndex);
+        this.logger.debug(
+                "An AppendEntries Request for %d with LastLogIndex=%d, LastLogTerm=%d, EntriesLength=%d, CommitIndex=%d and Term=%d",
+                peer.getId(),
+                lastLogIndex,
+                lastLogTerm,
+                logEntries == null ? 0 : logEntries.length,
+                commitIndex,
+                term);
+        RaftRequestMessage requestMessage = new RaftRequestMessage();
+        requestMessage.setMessageType(RaftMessageType.QueueTopAppendEntriesRequest);
+        requestMessage.setSource(this.id);
+        requestMessage.setDestination(peer.getId());
+        requestMessage.setLastLogIndex(lastLogIndex);
+        requestMessage.setLastLogTerm(lastLogTerm);
+        requestMessage.setLogEntries(logEntries);
+        requestMessage.setCommitIndex(commitIndex);
+        requestMessage.setTerm(term);
+        return requestMessage;
+    }
+    
+    private RaftRequestMessage createQueueSizeAppendEntriesRequest(PeerServer peer){
+        long currentNextIndex = 0;
+        long commitIndex = 0;
+        long lastLogIndex = 0;
+        long term = 0;
+        long startingIndex = 1;
+
+        synchronized(this){
+            startingIndex = this.logStore.getStartIndex();
+            currentNextIndex = this.logStore.getFirstAvailableIndex();
+            commitIndex = this.quickCommitIndex;
+            term = this.state.getTerm();
+        }
+
+        synchronized(peer){
+            if(peer.getNextLogIndex() == 0){
+                peer.setNextLogIndex(currentNextIndex);
+            }
+
+            lastLogIndex = peer.getNextLogIndex() - 1;
+        }
+
+        if(lastLogIndex >= currentNextIndex){
+            this.logger.error("Peer's lastLogIndex is too large %d v.s. %d, server exits", lastLogIndex, currentNextIndex);
+            this.stateMachine.exit(-1);
+        }
+
+        // for syncing the snapshots, if the lastLogIndex == lastSnapshot.getLastLogIndex, we could get the term from the snapshot
+        if(lastLogIndex > 0 && lastLogIndex < startingIndex - 1){
+            return this.createSyncSnapshotRequest(peer, lastLogIndex, term, commitIndex);
+        }
+
+        long lastLogTerm = this.termForLastLog(lastLogIndex);
+        long endIndex = Math.min(currentNextIndex, lastLogIndex + 1 + context.getRaftParameters().getMaximumAppendingSize());
+        LogEntry[] logEntries = (lastLogIndex + 1) >= endIndex ? null : this.logStore.getLogEntries(lastLogIndex + 1, endIndex);
+        this.logger.debug(
+                "An AppendEntries Request for %d with LastLogIndex=%d, LastLogTerm=%d, EntriesLength=%d, CommitIndex=%d and Term=%d",
+                peer.getId(),
+                lastLogIndex,
+                lastLogTerm,
+                logEntries == null ? 0 : logEntries.length,
+                commitIndex,
+                term);
+        RaftRequestMessage requestMessage = new RaftRequestMessage();
+        requestMessage.setMessageType(RaftMessageType.QueueSizeAppendEntriesRequest);
+        requestMessage.setSource(this.id);
+        requestMessage.setDestination(peer.getId());
+        requestMessage.setLastLogIndex(lastLogIndex);
+        requestMessage.setLastLogTerm(lastLogTerm);
+        requestMessage.setLogEntries(logEntries);
+        requestMessage.setCommitIndex(commitIndex);
+        requestMessage.setTerm(term);
+        return requestMessage;
+    }
+
     private void reconfigure(ClusterConfiguration newConfig){
         this.logger.debug(
                 "system is reconfigured to have %d servers, last config index: %d, this config index: %d",
@@ -1845,6 +2452,81 @@ public class RaftServer implements RaftMessageHandler {
         return response;
     }
 
+    private RaftResponseMessage handleQueuePopRequest(RaftRequestMessage request){
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setSource(this.id);
+        response.setDestination(this.leader);
+        response.setTerm(this.state.getTerm());
+        response.setMessageType(RaftMessageType.QueueAppendEntriesResponse);        
+        
+        long term;
+        synchronized(this){
+            if(this.role != ServerRole.Leader){
+                return response;
+            }
+            term = this.state.getTerm();
+        }
+        
+        LogEntry[] logEntries = request.getLogEntries();
+        this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, logEntries[0].getValue(), LogValueType.FTQueue )), logEntries[0].getValue());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.requestQueueAppendEntries(queueId, "pop");
+        this.queues.qPop(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(this.logStore.getFirstAvailableIndex());
+        return response;
+    }
+    
+    private RaftResponseMessage handleQueueTopRequest(RaftRequestMessage request){
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setSource(this.id);
+        response.setDestination(this.leader);
+        response.setTerm(this.state.getTerm());
+        response.setMessageType(RaftMessageType.QueueAppendEntriesResponse);        
+        
+        long term;
+        synchronized(this){
+            if(this.role != ServerRole.Leader){
+                return response;
+            }
+            term = this.state.getTerm();
+        }
+        
+        LogEntry[] logEntries = request.getLogEntries();
+        this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, logEntries[0].getValue(), LogValueType.FTQueue )), logEntries[0].getValue());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.requestQueueAppendEntries(queueId, "top");
+        this.queues.qTop(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(this.logStore.getFirstAvailableIndex());
+        return response;
+    }
+    
+    private RaftResponseMessage handleQueueSizeRequest(RaftRequestMessage request){
+        RaftResponseMessage response = new RaftResponseMessage();
+        response.setSource(this.id);
+        response.setDestination(this.leader);
+        response.setTerm(this.state.getTerm());
+        response.setMessageType(RaftMessageType.QueueAppendEntriesResponse);        
+        
+        long term;
+        synchronized(this){
+            if(this.role != ServerRole.Leader){
+                return response;
+            }
+            term = this.state.getTerm();
+        }
+        
+        LogEntry[] logEntries = request.getLogEntries();
+        this.stateMachine.preCommit(this.logStore.append(new LogEntry(term, logEntries[0].getValue(), LogValueType.FTQueue )), logEntries[0].getValue());
+        int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
+        this.requestQueueAppendEntries(queueId, "size");
+        this.queues.qSize(queueId);
+        response.setAccepted(true);
+        response.setNextIndex(this.logStore.getFirstAvailableIndex());
+        return response;
+    }
+
     private RaftResponseMessage handleQueuePushRequest(RaftRequestMessage request){
         RaftResponseMessage response = new RaftResponseMessage();
         response.setSource(this.id);
@@ -1861,21 +2543,18 @@ public class RaftServer implements RaftMessageHandler {
         }
         
         LogEntry[] logEntries = request.getLogEntries();
-        //System.out.println(Arrays.toString(logEntries[0].getValue()));
-        //System.out.println(Arrays.toString(logEntries[1].getValue()));
         long termValue = this.logStore.append(new LogEntry(term, logEntries[0].getValue(), LogValueType.FTQueue));
         termValue = this.logStore.append(new LogEntry(term, logEntries[1].getValue(), LogValueType.FTQueue ));
         this.stateMachine.preCommit(termValue, logEntries[0].getValue());
         int queueId = Character.getNumericValue(logEntries[0].getValue()[0]);
         int item = Character.getNumericValue(logEntries[1].getValue()[0]);
-        ///System.out.println(queueId);
-        //System.out.println(item);
         this.requestQueueAppendEntries(queueId, "push");
         this.queues.qPush(queueId, item);
         response.setAccepted(true);
         response.setNextIndex(this.logStore.getFirstAvailableIndex());
         return response;
     }
+
     private RaftResponseMessage handleRemoveServerRequest(RaftRequestMessage request){
         LogEntry[] logEntries = request.getLogEntries();
         RaftResponseMessage response = new RaftResponseMessage();

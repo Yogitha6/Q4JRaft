@@ -104,6 +104,7 @@ public class RaftClient {
 	        this.tryCurrentLeader(request, result, 0, 0);
 	        return result;
 		}
+	
 	public CompletableFuture<Boolean> qPush(byte[][] queueId, byte[][] item) {
 		
 		if(queueId == null || queueId.length < 0){
@@ -122,6 +123,63 @@ public class RaftClient {
 	        }
 			RaftRequestMessage request = new RaftRequestMessage();
 	        request.setMessageType(RaftMessageType.QueuePushCreateRequest);
+	        request.setLogEntries(logEntries);
+	        
+	        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+	        this.tryCurrentLeader(request, result, 0, 0);
+	        return result;
+		}
+	
+	public CompletableFuture<Boolean> qPop(byte[][] values) {
+			
+			if(values == null || values.length < 0){
+					throw new IllegalArgumentException("Queue Id must be equal or greater than zero");
+				}
+				
+			    LogEntry[] logEntries = new LogEntry[values.length];
+			    for(int i = 0; i < values.length; ++i){
+		            logEntries[i] = new LogEntry(0, values[i],LogValueType.FTQueue);
+		        }
+				RaftRequestMessage request = new RaftRequestMessage();
+		        request.setMessageType(RaftMessageType.QueuePopCreateRequest);
+		        request.setLogEntries(logEntries);
+		        
+		        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+		        this.tryCurrentLeader(request, result, 0, 0);
+		        return result;
+			}
+	
+	public CompletableFuture<Boolean> qTop(byte[][] values) {
+			
+			if(values == null || values.length < 0){
+					throw new IllegalArgumentException("Queue Label must be equal or greater than zero");
+				}
+				
+			    LogEntry[] logEntries = new LogEntry[values.length];
+			    for(int i = 0; i < values.length; ++i){
+		            logEntries[i] = new LogEntry(0, values[i],LogValueType.FTQueue);
+		        }
+				RaftRequestMessage request = new RaftRequestMessage();
+		        request.setMessageType(RaftMessageType.QueueTopCreateRequest);
+		        request.setLogEntries(logEntries);
+		        
+		        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+		        this.tryCurrentLeader(request, result, 0, 0);
+		        return result;
+			}
+	
+	public CompletableFuture<Boolean> qSize(byte[][] values) {
+		
+		if(values == null || values.length < 0){
+				throw new IllegalArgumentException("Queue Label must be equal or greater than zero");
+			}
+			
+		    LogEntry[] logEntries = new LogEntry[values.length];
+		    for(int i = 0; i < values.length; ++i){
+	            logEntries[i] = new LogEntry(0, values[i],LogValueType.FTQueue);
+	        }
+			RaftRequestMessage request = new RaftRequestMessage();
+	        request.setMessageType(RaftMessageType.QueueSizeCreateRequest);
 	        request.setLogEntries(logEntries);
 	        
 	        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();

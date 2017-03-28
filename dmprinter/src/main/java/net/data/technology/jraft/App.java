@@ -128,6 +128,21 @@ public class App
             	boolean accepted = client.qPush(new byte[][]{ queueId.trim().getBytes()}, new byte[][]{ pushItem.trim().getBytes()}).get();
             	System.out.println("Accepted: " + String.valueOf(accepted));
             	continue;
+            }else if(message.startsWith("qPop:")){
+            	String text = message.substring(5);
+            	boolean accepted = client.qPop(new byte[][]{ text.trim().getBytes()}).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
+            }else if(message.startsWith("qTop:")){
+            	String text = message.substring(5);
+            	boolean accepted = client.qTop(new byte[][]{ text.trim().getBytes()}).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
+            }else if(message.startsWith("qSize:")){
+            	String text = message.substring(6);
+            	boolean accepted = client.qSize(new byte[][]{ text.trim().getBytes()}).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
             }else if(message.startsWith("addsrv")){
                 StringTokenizer tokenizer = new StringTokenizer(message, ";");
                 ArrayList<String> values = new ArrayList<String>();

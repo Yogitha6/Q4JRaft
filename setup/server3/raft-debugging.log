@@ -1,0 +1,1511 @@
+2017-03-27 22:16:50 DEBUG FileBasedSequentialLogStore.main - log store started with entriesInStore=562, startIndex=1
+2017-03-27 22:16:50 INFO  RaftServer.main - Server 3 started
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-1 - Election timeout, change to Candidate
+2017-03-27 22:16:54 INFO  RaftServer.pool-1-thread-1 - requestVote started with term 2061
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 1 with term 2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-1 - send RequestVoteRequest to server 2 with term 2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2061, NextIndex=0
+2017-03-27 22:16:54 INFO  RaftServer.pool-1-thread-2 - Server is elected as leader for term 2061
+2017-03-27 22:16:54 INFO  RaftServer.pool-1-thread-2 - add initial configuration to log store
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=562, LastLogTerm=2059, EntriesLength=1, CommitIndex=562 and Term=2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=562, LastLogTerm=2059, EntriesLength=1, CommitIndex=562 and Term=2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-3 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2061, NextIndex=0
+2017-03-27 22:16:54 INFO  RaftServer.pool-1-thread-3 - Election completed, will ignore the voting result from this server
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=false, Term=2061, NextIndex=561
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=560, LastLogTerm=2058, EntriesLength=3, CommitIndex=562 and Term=2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-8 - Server 1 is busy, skip the request
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:16:54 INFO  RaftServer.Thread-2 - configuration at index 563 is committed
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:54 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:16:54 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:55 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:55 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:55 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:55 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:55 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 1
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:57 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:57 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:57 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:57 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:57 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:58 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:16:58 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:16:58 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:16:58 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:16:58 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:00 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:00 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:00 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:00 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:00 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:01 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:01 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:01 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:01 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:01 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=0, CommitIndex=563 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=564
+2017-03-27 22:17:03 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - Receive a ClientRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=1, CommitIndex=563 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=563, LastLogTerm=2061, EntriesLength=1, CommitIndex=563 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=565
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:03 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:17:03 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=0, CommitIndex=564 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=0, CommitIndex=564 and Term=2061
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:03 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:17:03 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=0, CommitIndex=564 and Term=2061
+2017-03-27 22:17:04 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:04 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=0, CommitIndex=564 and Term=2061
+2017-03-27 22:17:04 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:04 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:04 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=565
+2017-03-27 22:17:05 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-4 - Receive a ClientRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=1, CommitIndex=564 and Term=2061
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=1, CommitIndex=564 and Term=2061
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=566
+2017-03-27 22:17:05 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:17:05 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=0, CommitIndex=565 and Term=2061
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=564, LastLogTerm=2061, EntriesLength=1, CommitIndex=565 and Term=2061
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:05 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:05 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=0, CommitIndex=565 and Term=2061
+2017-03-27 22:17:06 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:06 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=0, CommitIndex=565 and Term=2061
+2017-03-27 22:17:06 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:06 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:06 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=0, CommitIndex=565 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=0, CommitIndex=565 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=566
+2017-03-27 22:17:07 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-3 - Receive a ClientRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=1, CommitIndex=565 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=565, LastLogTerm=2061, EntriesLength=1, CommitIndex=565 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=567
+2017-03-27 22:17:07 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:17:07 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:07 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:09 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:09 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:09 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:09 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:17:09 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:10 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:10 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:10 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:10 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:10 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:12 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:12 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=0, CommitIndex=566 and Term=2061
+2017-03-27 22:17:12 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:12 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:12 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=567
+2017-03-27 22:17:13 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - Receive a QueueCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=1, CommitIndex=566 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message QueueAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=1, CommitIndex=566 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message QueueAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:17:13 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueAppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=566, LastLogTerm=2061, EntriesLength=1, CommitIndex=567 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-6 - Receive a QueueAppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:13 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:13 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:15 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:15 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:15 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:15 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:15 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:16 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:16 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=0, CommitIndex=567 and Term=2061
+2017-03-27 22:17:16 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:16 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:16 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=568
+2017-03-27 22:17:17 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-6 - Receive a QueueCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=1, CommitIndex=567 and Term=2061
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message QueueAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=1, CommitIndex=567 and Term=2061
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message QueueAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-6 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=569
+2017-03-27 22:17:17 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:17:17 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueAppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=567, LastLogTerm=2061, EntriesLength=1, CommitIndex=568 and Term=2061
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:17 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-2 - Receive a QueueAppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:17 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:18 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:18 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:18 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:18 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:18 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:19 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:19 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:19 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:19 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:19 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2061
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=569
+2017-03-27 22:17:21 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - Receive a RetrieveQueueIdRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=1, CommitIndex=568 and Term=2061
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message GetQueueIdAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=568, LastLogTerm=2061, EntriesLength=1, CommitIndex=568 and Term=2061
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message GetQueueIdAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:21 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2061, NextIndex=570
+2017-03-27 22:17:21 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:17:21 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-7 - Receive a GetQueueIdAppendEntriesResponse message from peer 1 with Result=true, Term=2061, NextIndex=570
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-7 - Server 2 is busy, skip the request
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - Receive a GetQueueIdAppendEntriesResponse message from peer 2 with Result=true, Term=2061, NextIndex=570
+2017-03-27 22:17:21 DEBUG RaftServer.pool-1-thread-1 - Server 2 is busy, skip the request
+2017-03-27 22:17:22 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:17:22 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:17:22 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:22 DEBUG RaftServer.pool-1-thread-4 - Server 2 is busy, skip the request
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 1
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-8 - Server 1 is busy, skip the request
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-1 - Receive a RequestVoteRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=0 and Term=2062
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-1 - Response back a RequestVoteResponse message to 1 with Accepted=true, Term=2062, NextIndex=0
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=568 and Term=2062
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:24 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:17:24 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:17:26 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:26 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:26 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:26 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:17:26 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:17:27 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:17:27 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:27 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:27 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:17:27 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:17:29 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:29 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:29 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:29 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:17:29 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:17:30 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:17:30 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:30 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:30 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:17:30 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:17:32 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:32 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:32 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:32 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:17:32 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:17:33 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:17:33 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:33 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:33 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:17:33 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:17:35 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:17:35 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:35 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:35 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:17:35 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:17:36 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:17:36 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:36 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:36 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:17:36 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:17:38 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:17:38 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:38 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:38 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:17:38 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:17:39 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:17:39 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:39 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:39 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:17:39 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:17:41 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:17:41 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=0, CommitIndex=569 and Term=2062
+2017-03-27 22:17:41 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=570
+2017-03-27 22:17:41 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:17:41 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:17:42 DEBUG RaftServer.pool-1-thread-5 - Receive a QueuePushCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=2, CommitIndex=0 and Term=0
+2017-03-27 22:17:42 DEBUG RaftServer.pool-1-thread-5 - Response back a QueueAppendEntriesResponse message to 1 with Accepted=false, Term=2062, NextIndex=0
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:17:42 DEBUG RaftServer.pool-1-thread-4 - Receive a QueuePushAppendEntriesRequest message from 1 with LastLogIndex=569, LastLogTerm=2061, EntriesLength=2, CommitIndex=569 and Term=2062
+2017-03-27 22:17:42 DEBUG RaftServer.pool-1-thread-4 - Response back a QueuePushAppendEntriesResponse message to 1 with Accepted=true, Term=2062, NextIndex=572
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:17:42 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-5 - Election timeout, change to Candidate
+2017-03-27 22:17:45 INFO  RaftServer.pool-1-thread-5 - requestVote started with term 2063
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 1 with term 2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 2 with term 2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-1 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2063, NextIndex=0
+2017-03-27 22:17:45 INFO  RaftServer.pool-1-thread-1 - Server is elected as leader for term 2063
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=569 and Term=2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=569 and Term=2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-3 - Server 2 is busy, skip the request
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2063, NextIndex=0
+2017-03-27 22:17:45 INFO  RaftServer.pool-1-thread-2 - Election completed, will ignore the voting result from this server
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:45 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:45 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 1
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:47 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:47 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:47 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:47 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:47 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:48 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:48 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:48 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:48 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:48 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:50 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:50 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:50 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:50 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:50 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:51 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:51 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:51 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:51 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:51 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:53 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:53 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:53 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:53 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:53 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:54 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:54 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:17:54 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:56 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:56 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:56 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:56 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:56 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=0, CommitIndex=571 and Term=2063
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=572
+2017-03-27 22:17:57 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - Receive a QueuePushCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=2, CommitIndex=0 and Term=0
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=2, CommitIndex=571 and Term=2063
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message QueuePushAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=571, LastLogTerm=2062, EntriesLength=2, CommitIndex=571 and Term=2063
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message QueuePushAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:57 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-1 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2063, NextIndex=574
+2017-03-27 22:17:57 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:17:57 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-6 - Receive a QueuePushAppendEntriesResponse message from peer 1 with Result=true, Term=2063, NextIndex=574
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-2 - Receive a QueuePushAppendEntriesResponse message from peer 2 with Result=true, Term=2063, NextIndex=574
+2017-03-27 22:17:57 DEBUG RaftServer.pool-1-thread-2 - Server 2 is busy, skip the request
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-2 - Server 1 is busy, skip the request
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-4 - Server 2 is busy, skip the request
+2017-03-27 22:17:59 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-5 - Receive a QueuePushCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=2, CommitIndex=0 and Term=0
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-5 - Server 1 is busy, skip the request
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:17:59 DEBUG RaftServer.pool-1-thread-5 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2063, NextIndex=576
+2017-03-27 22:17:59 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:17:59 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:18:00 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:18:00 DEBUG RaftServer.pool-1-thread-1 - Server 1 is busy, skip the request
+2017-03-27 22:18:00 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 2
+2017-03-27 22:18:00 DEBUG RaftServer.pool-1-thread-2 - Server 2 is busy, skip the request
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=0 and Term=2064
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-5 - Response back a RequestVoteResponse message to 2 with Accepted=false, Term=2064, NextIndex=0
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=571 and Term=2064
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:01 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:18:01 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:18:03 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:18:03 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:03 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:03 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:18:03 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:18:04 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:04 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:04 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:04 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:18:04 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:18:06 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:06 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:06 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:06 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:18:06 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:18:07 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:07 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:07 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:07 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:18:07 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:18:09 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:09 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:09 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:09 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:18:09 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:18:10 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:10 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:10 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:10 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:18:10 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:18:12 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:18:12 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:12 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:12 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:18:12 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:18:13 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:18:13 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:13 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:13 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:18:13 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:18:15 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:18:15 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:15 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:15 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:15 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:16 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:18:16 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:16 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:16 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:16 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:18 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:18 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:18 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:18 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:18 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:19 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:19 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:19 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:19 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:18:19 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:18:21 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:21 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:21 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:21 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:18:21 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:18:22 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:22 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:22 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:22 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:22 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:24 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:18:24 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:24 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:24 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:18:24 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:18:25 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:25 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:25 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:25 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:25 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:27 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:18:27 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:27 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:27 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:18:27 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:18:28 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:18:28 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=0, CommitIndex=573 and Term=2064
+2017-03-27 22:18:28 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=574
+2017-03-27 22:18:28 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:18:28 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:29 DEBUG RaftServer.pool-1-thread-2 - Receive a QueuePushCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=2, CommitIndex=0 and Term=0
+2017-03-27 22:18:29 DEBUG RaftServer.pool-1-thread-2 - Response back a QueueAppendEntriesResponse message to 2 with Accepted=false, Term=2064, NextIndex=0
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:18:29 DEBUG RaftServer.pool-1-thread-4 - Receive a QueuePushAppendEntriesRequest message from 2 with LastLogIndex=573, LastLogTerm=2063, EntriesLength=2, CommitIndex=573 and Term=2064
+2017-03-27 22:18:29 DEBUG RaftServer.pool-1-thread-4 - Response back a QueuePushAppendEntriesResponse message to 2 with Accepted=true, Term=2064, NextIndex=576
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:29 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-7 - Receive a RequestVoteRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=0 and Term=2065
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-7 - Response back a RequestVoteResponse message to 1 with Accepted=true, Term=2065, NextIndex=0
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=573 and Term=2065
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=576
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=575 and Term=2065
+2017-03-27 22:18:33 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=576
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:18:33 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:18:34 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:18:34 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=575 and Term=2065
+2017-03-27 22:18:34 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=576
+2017-03-27 22:18:34 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:34 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:36 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:36 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=575 and Term=2065
+2017-03-27 22:18:36 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=576
+2017-03-27 22:18:36 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:36 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:37 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:37 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=0, CommitIndex=575 and Term=2065
+2017-03-27 22:18:37 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=576
+2017-03-27 22:18:37 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:18:37 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:18:38 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:18:38 DEBUG RaftServer.pool-1-thread-1 - Receive a QueuePushAppendEntriesRequest message from 1 with LastLogIndex=575, LastLogTerm=2064, EntriesLength=2, CommitIndex=575 and Term=2065
+2017-03-27 22:18:38 DEBUG RaftServer.pool-1-thread-1 - Response back a QueuePushAppendEntriesResponse message to 1 with Accepted=true, Term=2065, NextIndex=578
+2017-03-27 22:18:38 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:38 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-6 - Receive a RequestVoteRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=0 and Term=2066
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-6 - Response back a RequestVoteResponse message to 2 with Accepted=true, Term=2066, NextIndex=0
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=575 and Term=2066
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=578
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=577 and Term=2066
+2017-03-27 22:18:42 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=578
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:42 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:44 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:44 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=577 and Term=2066
+2017-03-27 22:18:44 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=578
+2017-03-27 22:18:44 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:18:44 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:18:45 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:18:45 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=577 and Term=2066
+2017-03-27 22:18:45 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=578
+2017-03-27 22:18:45 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:18:45 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:18:47 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:18:47 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=0, CommitIndex=577 and Term=2066
+2017-03-27 22:18:47 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=578
+2017-03-27 22:18:47 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:18:47 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:18:48 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:48 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueSizeAppendEntriesRequest message from 2 with LastLogIndex=577, LastLogTerm=2065, EntriesLength=1, CommitIndex=577 and Term=2066
+2017-03-27 22:18:48 DEBUG RaftServer.pool-1-thread-4 - Response back a QueuePushAppendEntriesResponse message to 2 with Accepted=true, Term=2066, NextIndex=579
+2017-03-27 22:18:48 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:18:48 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - Election timeout, change to Candidate
+2017-03-27 22:18:51 INFO  RaftServer.pool-1-thread-6 - requestVote started with term 2067
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - send RequestVoteRequest to server 1 with term 2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - send RequestVoteRequest to server 2 with term 2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-3 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2067, NextIndex=0
+2017-03-27 22:18:51 INFO  RaftServer.pool-1-thread-3 - Server is elected as leader for term 2067
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=577 and Term=2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=577 and Term=2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2067, NextIndex=0
+2017-03-27 22:18:51 INFO  RaftServer.pool-1-thread-5 - Election completed, will ignore the voting result from this server
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:51 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:51 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:53 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:53 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:53 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:53 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:18:53 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:18:54 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:54 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:54 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:54 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 1
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:56 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:56 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=0, CommitIndex=578 and Term=2067
+2017-03-27 22:18:56 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:56 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:18:56 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=579
+2017-03-27 22:18:57 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-3 - Receive a QueueSizeCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=1, CommitIndex=578 and Term=2067
+2017-03-27 22:18:57 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message QueueSizeAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:18:57 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=578, LastLogTerm=2066, EntriesLength=1, CommitIndex=578 and Term=2067
+2017-03-27 22:18:57 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message QueueSizeAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:18:57 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-3 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2067, NextIndex=580
+2017-03-27 22:18:57 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:18:57 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Receive a QueuePushAppendEntriesResponse message from peer 2 with Result=true, Term=2067, NextIndex=580
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-7 - Receive a QueuePushAppendEntriesResponse message from peer 1 with Result=true, Term=2067, NextIndex=580
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:18:57 DEBUG RaftServer.pool-1-thread-4 - Server 2 is busy, skip the request
+2017-03-27 22:18:59 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:18:59 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:18:59 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:18:59 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:19:00 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 1
+2017-03-27 22:19:00 DEBUG RaftServer.pool-1-thread-8 - Server 1 is busy, skip the request
+2017-03-27 22:19:00 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:00 DEBUG RaftServer.pool-1-thread-3 - Server 2 is busy, skip the request
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=0 and Term=2068
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-2 - Response back a RequestVoteResponse message to 1 with Accepted=true, Term=2068, NextIndex=0
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=578 and Term=2068
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:02 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:19:02 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:19:03 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:19:03 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:03 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:03 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:19:03 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:19:05 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:19:05 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:05 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:05 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:19:05 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:19:06 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:19:06 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:06 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:06 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:06 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:08 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:19:08 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:08 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:08 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:19:08 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:19:09 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:19:09 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:09 DEBUG RaftServer.pool-1-thread-4 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:09 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:19:09 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:19:11 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:19:11 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:11 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:11 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:19:11 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:19:12 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:19:12 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:12 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:12 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:12 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=0, CommitIndex=579 and Term=2068
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=580
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-5 - Receive a QueueSizeCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-5 - Response back a QueueAppendEntriesResponse message to 1 with Accepted=false, Term=2068, NextIndex=0
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueSizeAppendEntriesRequest message from 1 with LastLogIndex=579, LastLogTerm=2067, EntriesLength=1, CommitIndex=579 and Term=2068
+2017-03-27 22:19:14 DEBUG RaftServer.pool-1-thread-4 - Response back a QueuePushAppendEntriesResponse message to 1 with Accepted=true, Term=2068, NextIndex=581
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:19:14 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-2 - Election timeout, change to Candidate
+2017-03-27 22:19:18 INFO  RaftServer.pool-1-thread-2 - requestVote started with term 2069
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-2 - send RequestVoteRequest to server 1 with term 2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-2 - send RequestVoteRequest to server 2 with term 2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-4 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2069, NextIndex=0
+2017-03-27 22:19:18 INFO  RaftServer.pool-1-thread-4 - Server is elected as leader for term 2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=579 and Term=2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=579 and Term=2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2069, NextIndex=0
+2017-03-27 22:19:18 INFO  RaftServer.pool-1-thread-5 - Election completed, will ignore the voting result from this server
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:18 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:18 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:19 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:19:19 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:19 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:19 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:19 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:21 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:21 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:21 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:21 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:21 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:22 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:22 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 2
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:22 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:22 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:22 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:24 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:24 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:24 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:24 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:24 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:25 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:25 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-8 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:25 DEBUG RpcTcpClient.pool-1-thread-8 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:25 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:25 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=0, CommitIndex=580 and Term=2069
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=581
+2017-03-27 22:19:27 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-6 - Receive a QueuePushCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=2, CommitIndex=0 and Term=0
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=2, CommitIndex=580 and Term=2069
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message QueuePushAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=580, LastLogTerm=2068, EntriesLength=2, CommitIndex=580 and Term=2069
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message QueuePushAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:27 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-6 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2069, NextIndex=583
+2017-03-27 22:19:27 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:19:27 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-7 - Receive a QueuePushAppendEntriesResponse message from peer 1 with Result=true, Term=2069, NextIndex=583
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-7 - Server 2 is busy, skip the request
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-7 - Server 1 is busy, skip the request
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-5 - Receive a QueuePushAppendEntriesResponse message from peer 2 with Result=true, Term=2069, NextIndex=583
+2017-03-27 22:19:27 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:19:28 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:28 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:19:28 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:28 DEBUG RaftServer.pool-1-thread-3 - Server 2 is busy, skip the request
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=0 and Term=2070
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-2 - Response back a RequestVoteResponse message to 1 with Accepted=true, Term=2070, NextIndex=0
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=580 and Term=2070
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=583
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=582 and Term=2070
+2017-03-27 22:19:30 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=583
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:19:30 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:19:32 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:19:32 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=582 and Term=2070
+2017-03-27 22:19:32 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=583
+2017-03-27 22:19:32 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:19:32 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:19:33 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:19:33 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=582 and Term=2070
+2017-03-27 22:19:33 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=583
+2017-03-27 22:19:33 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:19:33 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:19:35 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:19:35 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=0, CommitIndex=582 and Term=2070
+2017-03-27 22:19:35 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=583
+2017-03-27 22:19:35 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:35 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:19:36 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueSizeCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:19:36 DEBUG RaftServer.pool-1-thread-4 - Response back a QueueAppendEntriesResponse message to 1 with Accepted=false, Term=2070, NextIndex=0
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:19:36 DEBUG RaftServer.pool-1-thread-3 - Receive a QueueSizeAppendEntriesRequest message from 1 with LastLogIndex=582, LastLogTerm=2069, EntriesLength=1, CommitIndex=582 and Term=2070
+2017-03-27 22:19:36 DEBUG RaftServer.pool-1-thread-3 - Response back a QueuePushAppendEntriesResponse message to 1 with Accepted=true, Term=2070, NextIndex=584
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:19:36 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-5 - Election timeout, change to Candidate
+2017-03-27 22:19:40 INFO  RaftServer.pool-1-thread-5 - requestVote started with term 2071
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 1 with term 2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 2 with term 2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2071, NextIndex=0
+2017-03-27 22:19:40 INFO  RaftServer.pool-1-thread-2 - Server is elected as leader for term 2071
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=582 and Term=2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=582 and Term=2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-4 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2071, NextIndex=0
+2017-03-27 22:19:40 INFO  RaftServer.pool-1-thread-4 - Election completed, will ignore the voting result from this server
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-4 - Server 2 is busy, skip the request
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:40 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:19:40 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:42 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:42 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:42 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:42 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:42 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-2 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:43 DEBUG RpcTcpClient.pool-1-thread-2 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:43 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:43 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:43 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:43 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:45 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:45 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:19:45 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:45 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:45 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 1
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:46 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:46 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:46 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:46 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:46 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:48 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:48 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:48 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:48 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:48 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:49 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:49 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:49 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:49 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:49 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:51 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:51 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:51 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:51 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:51 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:52 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:52 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:52 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:52 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:52 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:54 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:54 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:54 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:54 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:54 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:55 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:55 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:55 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:55 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:55 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:57 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:57 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:57 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:19:57 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:57 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:58 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:19:58 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=0, CommitIndex=583 and Term=2071
+2017-03-27 22:19:58 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:58 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:58 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=584
+2017-03-27 22:19:59 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-7 - Receive a QueueTopCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=1, CommitIndex=583 and Term=2071
+2017-03-27 22:19:59 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message QueueTopAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:19:59 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=583, LastLogTerm=2070, EntriesLength=1, CommitIndex=583 and Term=2071
+2017-03-27 22:19:59 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message QueueTopAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:19:59 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-7 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2071, NextIndex=585
+2017-03-27 22:19:59 DEBUG RpcTcpListener.pool-1-thread-7 - response message sent.
+2017-03-27 22:19:59 DEBUG RpcTcpListener.pool-1-thread-7 - try to read next request
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-1 - Receive a QueueTopAppendEntriesResponse message from peer 1 with Result=true, Term=2071, NextIndex=585
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-1 - Server 1 is busy, skip the request
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-1 - Server 2 is busy, skip the request
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-1 - Server 1 is busy, skip the request
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-3 - Receive a QueueTopAppendEntriesResponse message from peer 2 with Result=true, Term=2071, NextIndex=585
+2017-03-27 22:19:59 DEBUG RaftServer.pool-1-thread-3 - Server 2 is busy, skip the request
+2017-03-27 22:20:00 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 1
+2017-03-27 22:20:00 DEBUG RaftServer.pool-1-thread-8 - Server 1 is busy, skip the request
+2017-03-27 22:20:00 DEBUG RaftServer.pool-1-thread-8 - Heartbeat timeout for 2
+2017-03-27 22:20:00 DEBUG RaftServer.pool-1-thread-8 - Server 2 is busy, skip the request
+2017-03-27 22:20:01 DEBUG RaftServer.pool-1-thread-2 - Heartbeat timeout for 1
+2017-03-27 22:20:01 DEBUG RaftServer.pool-1-thread-2 - Server 1 is busy, skip the request
+2017-03-27 22:20:01 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:20:01 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-4 - Receive a RequestVoteRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=0 and Term=2072
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-4 - Response back a RequestVoteResponse message to 2 with Accepted=true, Term=2072, NextIndex=0
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=583 and Term=2072
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-6 - request header read, try to see if there is a request body
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=584 and Term=2072
+2017-03-27 22:20:02 DEBUG RaftServer.pool-1-thread-6 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:20:02 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:20:03 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:20:03 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=584 and Term=2072
+2017-03-27 22:20:03 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:03 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:20:03 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:20:05 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:20:05 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=584 and Term=2072
+2017-03-27 22:20:05 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:05 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:20:05 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:20:06 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:20:06 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=584 and Term=2072
+2017-03-27 22:20:06 DEBUG RaftServer.pool-1-thread-5 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:06 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:20:06 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=0, CommitIndex=584 and Term=2072
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=585
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-4 - Receive a QueueTopCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-4 - Response back a QueueAppendEntriesResponse message to 2 with Accepted=false, Term=2072, NextIndex=0
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-3 - response message sent.
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-3 - try to read next request
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-5 - request header read, try to see if there is a request body
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-5 - Receive a QueueTopAppendEntriesRequest message from 2 with LastLogIndex=584, LastLogTerm=2071, EntriesLength=1, CommitIndex=584 and Term=2072
+2017-03-27 22:20:08 DEBUG RaftServer.pool-1-thread-5 - Response back a QueueTopAppendEntriesResponse message to 2 with Accepted=true, Term=2072, NextIndex=586
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:20:08 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-5 - Election timeout, change to Candidate
+2017-03-27 22:20:12 INFO  RaftServer.pool-1-thread-5 - requestVote started with term 2073
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 1 with term 2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-5 - send RequestVoteRequest to server 2 with term 2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-6 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2073, NextIndex=0
+2017-03-27 22:20:12 INFO  RaftServer.pool-1-thread-6 - Server is elected as leader for term 2073
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=584 and Term=2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=584 and Term=2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2073, NextIndex=0
+2017-03-27 22:20:12 INFO  RaftServer.pool-1-thread-5 - Election completed, will ignore the voting result from this server
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:12 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:12 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 1
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:14 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:14 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:14 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:14 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:14 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 1
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:15 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:15 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:15 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:20:15 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:15 DEBUG RaftServer.pool-1-thread-5 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:17 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:20:17 DEBUG RpcTcpClient.pool-1-thread-2 - reading response from socket...
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:17 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:17 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:17 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 1
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:18 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-1 - Heartbeat timeout for 2
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:18 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:18 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:18 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:18 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 1
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-3 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:20 DEBUG RpcTcpClient.pool-1-thread-3 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:20:20 DEBUG RpcTcpClient.pool-1-thread-1 - reading response from socket...
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:20 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:20 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:20 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 1
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:21 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-4 - Heartbeat timeout for 2
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:21 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:21 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:20:21 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:21 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 1
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:23 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:23 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-7 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:23 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:23 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-6 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:23 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 2
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=0, CommitIndex=585 and Term=2073
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=586
+2017-03-27 22:20:24 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-1 - Receive a QueuePopCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 1 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=1, CommitIndex=585 and Term=2073
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message QueuePopAppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-1 - An AppendEntries Request for 2 with LastLogIndex=585, LastLogTerm=2072, EntriesLength=1, CommitIndex=585 and Term=2073
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-1 - trying to send message QueuePopAppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:20:24 DEBUG RpcTcpClient.pool-1-thread-3 - reading response from socket...
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-1 - Response back a QueueAppendEntriesResponse message to 3 with Accepted=true, Term=2073, NextIndex=587
+2017-03-27 22:20:24 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:20:24 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-6 - Receive a QueuePopAppendEntriesResponse message from peer 1 with Result=true, Term=2073, NextIndex=587
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-6 - Server 2 is busy, skip the request
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-6 - Server 1 is busy, skip the request
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - Receive a QueuePopAppendEntriesResponse message from peer 2 with Result=true, Term=2073, NextIndex=587
+2017-03-27 22:20:24 DEBUG RaftServer.pool-1-thread-5 - Server 2 is busy, skip the request
+2017-03-27 22:20:26 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:20:26 DEBUG RaftServer.pool-1-thread-5 - Server 1 is busy, skip the request
+2017-03-27 22:20:26 DEBUG RaftServer.pool-1-thread-3 - Heartbeat timeout for 2
+2017-03-27 22:20:26 DEBUG RaftServer.pool-1-thread-3 - Server 2 is busy, skip the request
+2017-03-27 22:20:27 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:20:27 DEBUG RaftServer.pool-1-thread-5 - Server 1 is busy, skip the request
+2017-03-27 22:20:27 DEBUG RaftServer.pool-1-thread-7 - Heartbeat timeout for 2
+2017-03-27 22:20:27 DEBUG RaftServer.pool-1-thread-7 - Server 2 is busy, skip the request
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-8 - Receive a RequestVoteRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=0 and Term=2074
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-8 - Response back a RequestVoteResponse message to 2 with Accepted=true, Term=2074, NextIndex=0
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-6 - response message sent.
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-6 - try to read next request
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=585 and Term=2074
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:28 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:20:28 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:20:29 DEBUG RpcTcpListener.pool-1-thread-3 - request header read, try to see if there is a request body
+2017-03-27 22:20:29 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:29 DEBUG RaftServer.pool-1-thread-3 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:29 DEBUG RpcTcpListener.pool-1-thread-4 - response message sent.
+2017-03-27 22:20:29 DEBUG RpcTcpListener.pool-1-thread-4 - try to read next request
+2017-03-27 22:20:31 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:20:31 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:31 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:31 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:20:31 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:20:32 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:20:32 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:32 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:32 DEBUG RpcTcpListener.pool-1-thread-1 - response message sent.
+2017-03-27 22:20:32 DEBUG RpcTcpListener.pool-1-thread-1 - try to read next request
+2017-03-27 22:20:34 DEBUG RpcTcpListener.pool-1-thread-8 - request header read, try to see if there is a request body
+2017-03-27 22:20:34 DEBUG RaftServer.pool-1-thread-8 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:34 DEBUG RaftServer.pool-1-thread-8 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:34 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:20:34 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:20:35 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:20:35 DEBUG RaftServer.pool-1-thread-7 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:35 DEBUG RaftServer.pool-1-thread-7 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:35 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:20:35 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:20:37 DEBUG RpcTcpListener.pool-1-thread-2 - request header read, try to see if there is a request body
+2017-03-27 22:20:37 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:37 DEBUG RaftServer.pool-1-thread-2 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:37 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:20:37 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:20:38 DEBUG RpcTcpListener.pool-1-thread-1 - request header read, try to see if there is a request body
+2017-03-27 22:20:38 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=0, CommitIndex=586 and Term=2074
+2017-03-27 22:20:38 DEBUG RaftServer.pool-1-thread-1 - Response back a AppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=587
+2017-03-27 22:20:38 DEBUG RpcTcpListener.pool-1-thread-5 - response message sent.
+2017-03-27 22:20:38 DEBUG RpcTcpListener.pool-1-thread-5 - try to read next request
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-4 - request header read, try to see if there is a request body
+2017-03-27 22:20:39 DEBUG RaftServer.pool-1-thread-6 - Receive a QueueSizeCreateRequest message from 0 with LastLogIndex=0, LastLogTerm=0, EntriesLength=1, CommitIndex=0 and Term=0
+2017-03-27 22:20:39 DEBUG RaftServer.pool-1-thread-6 - Response back a QueueAppendEntriesResponse message to 2 with Accepted=false, Term=2074, NextIndex=0
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-2 - response message sent.
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-2 - try to read next request
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-7 - request header read, try to see if there is a request body
+2017-03-27 22:20:39 DEBUG RaftServer.pool-1-thread-8 - Receive a QueueSizeAppendEntriesRequest message from 2 with LastLogIndex=586, LastLogTerm=2073, EntriesLength=1, CommitIndex=586 and Term=2074
+2017-03-27 22:20:39 DEBUG RaftServer.pool-1-thread-8 - Response back a QueuePushAppendEntriesResponse message to 2 with Accepted=true, Term=2074, NextIndex=588
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-8 - response message sent.
+2017-03-27 22:20:39 DEBUG RpcTcpListener.pool-1-thread-8 - try to read next request
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-7 - Election timeout, change to Candidate
+2017-03-27 22:20:42 INFO  RaftServer.pool-1-thread-7 - requestVote started with term 2075
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-7 - send RequestVoteRequest to server 1 with term 2075
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message RequestVoteRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-7 - send RequestVoteRequest to server 2 with term 2075
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-7 - trying to send message RequestVoteRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-6 - reading response from socket...
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-5 - Receive a RequestVoteResponse message from peer 1 with Result=true, Term=2075, NextIndex=0
+2017-03-27 22:20:42 INFO  RaftServer.pool-1-thread-5 - Server is elected as leader for term 2075
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=586 and Term=2075
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:42 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:20:42 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 2 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=586 and Term=2075
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-5 - reading response from socket...
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-2 - Receive a RequestVoteResponse message from peer 2 with Result=true, Term=2075, NextIndex=0
+2017-03-27 22:20:43 INFO  RaftServer.pool-1-thread-2 - Election completed, will ignore the voting result from this server
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-4 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2075, NextIndex=588
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 1 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=587 and Term=2075
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-4 - An AppendEntries Request for 2 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=587 and Term=2075
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-4 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:43 DEBUG RpcTcpClient.pool-1-thread-4 - reading response from socket...
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2075, NextIndex=588
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-2 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2075, NextIndex=588
+2017-03-27 22:20:43 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2075, NextIndex=588
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-5 - Heartbeat timeout for 1
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-5 - An AppendEntries Request for 1 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=587 and Term=2075
+2017-03-27 22:20:44 DEBUG RpcTcpClient.pool-1-thread-5 - trying to send message AppendEntriesRequest to server 1 at endpoint localhost/127.0.0.1:9001
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-6 - Heartbeat timeout for 2
+2017-03-27 22:20:44 DEBUG RpcTcpClient.pool-1-thread-7 - reading response from socket...
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-6 - An AppendEntries Request for 2 with LastLogIndex=587, LastLogTerm=2074, EntriesLength=0, CommitIndex=587 and Term=2075
+2017-03-27 22:20:44 DEBUG RpcTcpClient.pool-1-thread-6 - trying to send message AppendEntriesRequest to server 2 at endpoint localhost/127.0.0.1:9002
+2017-03-27 22:20:44 DEBUG RpcTcpClient.pool-1-thread-8 - reading response from socket...
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-1 - Receive a AppendEntriesResponse message from peer 1 with Result=true, Term=2075, NextIndex=588
+2017-03-27 22:20:44 DEBUG RaftServer.pool-1-thread-3 - Receive a AppendEntriesResponse message from peer 2 with Result=true, Term=2075, NextIndex=588

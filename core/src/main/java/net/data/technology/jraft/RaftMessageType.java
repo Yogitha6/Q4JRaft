@@ -339,6 +339,141 @@ public enum RaftMessageType {
         public byte toByte(){
             return (byte)29;
         }
+    },
+    QueuePopCreateRequest{
+    	@Override
+        public String toString(){
+            return "QueuePopCreateRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)30;
+        }    	
+    },
+    QueuePopCreateResponse{
+    	@Override
+        public String toString(){
+            return "QueuePopCreateResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)31;
+        }
+    },
+    QueuePopAppendEntriesRequest{
+    	@Override
+        public String toString(){
+            return "QueuePopAppendEntriesRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)32;
+        }
+    	
+    },
+    QueuePopAppendEntriesResponse{
+    	@Override
+        public String toString(){
+            return "QueuePopAppendEntriesResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)33;
+        }
+    },
+    QueueTopCreateRequest{
+    	@Override
+        public String toString(){
+            return "QueueTopCreateRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)34;
+        }    	
+    },
+    QueueTopCreateResponse{
+    	@Override
+        public String toString(){
+            return "QueueTopCreateResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)35;
+        }
+    },
+    QueueTopAppendEntriesRequest{
+    	@Override
+        public String toString(){
+            return "QueueTopAppendEntriesRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)36;
+        }
+    	
+    },
+    QueueTopAppendEntriesResponse{
+    	@Override
+        public String toString(){
+            return "QueueTopAppendEntriesResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)37;
+        }
+    },
+    QueueSizeCreateRequest{
+    	@Override
+        public String toString(){
+            return "QueueSizeCreateRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)38;
+        }    	
+    },
+    QueueSizeCreateResponse{
+    	@Override
+        public String toString(){
+            return "QueueSizeCreateResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)39;
+        }
+    },
+    QueueSizeAppendEntriesRequest{
+    	@Override
+        public String toString(){
+            return "QueueSizeAppendEntriesRequest";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)40;
+        }
+    	
+    },
+    QueueSizeAppendEntriesResponse{
+    	@Override
+        public String toString(){
+            return "QueuePushAppendEntriesResponse";
+        }
+
+        @Override
+        public byte toByte(){
+            return (byte)41;
+        }
     };
     
 
@@ -404,6 +539,30 @@ public enum RaftMessageType {
         	return QueuePushAppendEntriesRequest;
         case 29:
         	return QueuePushAppendEntriesResponse;
+        case 30:
+        	return QueuePopCreateRequest;
+        case 31:
+        	return QueuePopCreateResponse;
+        case 32:
+    		return QueuePopAppendEntriesRequest;
+        case 33:
+        	return QueuePopAppendEntriesResponse;
+        case 34:
+        	return QueueTopCreateRequest;
+        case 35:
+    		return QueueTopCreateResponse;
+        case 36:
+        	return QueueTopAppendEntriesRequest;
+        case 37:
+        	return QueueTopAppendEntriesResponse;        	
+        case 38:
+        	return QueueSizeCreateRequest;
+        case 39:
+        	return QueueSizeCreateResponse;
+        case 40:
+        	return QueueSizeAppendEntriesRequest;
+        case 41:
+        	return QueueSizeAppendEntriesResponse;
         }
 
         throw new IllegalArgumentException("the value for the message type is not defined");

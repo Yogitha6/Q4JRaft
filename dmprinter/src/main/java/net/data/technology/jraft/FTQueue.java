@@ -48,19 +48,25 @@ void qPush(int queue_id, int item)
 // Removes an item from the queue
 int qPop(int queue_id)
 {
-	return ftqueues.get(queue_id).queuePop();
+	int poppedItem = ftqueues.get(queue_id).queuePop();
+	System.out.println("Queue with id "+queue_id+" has been popped: "+poppedItem);
+	return poppedItem;
 }
 
 // Returns the value of the first element in the queue
 int qTop(int queue_id)
 {
-	return ftqueues.get(queue_id).queueTop();
+	int topitem = ftqueues.get(queue_id).queueTop();
+	System.out.println("Queue with id "+queue_id+" top element is: "+topitem);
+	return topitem;
 }
 
 // Returns the number of items in the queue
 int qSize(int queue_id)
 {
-	return ftqueues.get(queue_id).queueSize();
+	int size = ftqueues.get(queue_id).queueSize();
+	System.out.println("Queue with id "+queue_id+" has a size of : "+size);
+	return size;
 }
 
 public static void main(String[] args) {
