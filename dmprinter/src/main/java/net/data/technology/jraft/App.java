@@ -109,13 +109,18 @@ public class App
         while(true){
             System.out.print("Message:");
             String message = reader.readLine();
+            
             if(message.startsWith("qCreate:")){
             	String text = message.substring(8);
             	boolean accepted = client.qCreate(new byte[][]{ text.trim().getBytes()}).get();
             	System.out.println("Accepted: " + String.valueOf(accepted));
             	continue;
-            }
-            if(message.startsWith("addsrv")){
+            }else if(message.startsWith("qId:")){
+            	String text = message.substring(4);
+            	boolean accepted = client.qId(new byte[][]{ text.trim().getBytes()}).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
+            }else if(message.startsWith("addsrv")){
                 StringTokenizer tokenizer = new StringTokenizer(message, ";");
                 ArrayList<String> values = new ArrayList<String>();
                 while(tokenizer.hasMoreTokens()){

@@ -24,7 +24,7 @@ public MyQueue(int size, int labelValue)
 public MyQueue queueCreate(int label)
 {
 	MyQueue queueInstance = new MyQueue(20, label);
-	System.out.println("Queue created");
+	//System.out.println("Queue created");
 	return queueInstance;
 }
 

@@ -30,8 +30,12 @@ public int qId(int label)
 	for(Map.Entry<Integer, MyQueue> mapentry : ftqueues.entrySet())
 	{
 		if(mapentry.getValue().getqueueLabel()==label)
+		{
+		   System.out.println("Id of queue with label "+label+" is: "+mapentry.getKey());
     	   return mapentry.getKey();
+		}
     }
+	System.out.println("No queue with the label "+label);
 	return -1;
 }
 

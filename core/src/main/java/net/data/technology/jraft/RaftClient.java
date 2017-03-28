@@ -85,6 +85,24 @@ public class RaftClient {
 	        return result;
 		}
 
+	public CompletableFuture<Boolean> qId(byte[][] values) {
+		
+		if(values == null || values.length < 0){
+				throw new IllegalArgumentException("Queue Label must be equal or greater than zero");
+			}
+			
+		    LogEntry[] logEntries = new LogEntry[values.length];
+		    for(int i = 0; i < values.length; ++i){
+	            logEntries[i] = new LogEntry(0, values[i],LogValueType.FTQueue);
+	        }
+			RaftRequestMessage request = new RaftRequestMessage();
+	        request.setMessageType(RaftMessageType.RetrieveQueueIdRequest);
+	        request.setLogEntries(logEntries);
+	        
+	        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+	        this.tryCurrentLeader(request, result, 0, 0);
+	        return result;
+		}
 
     public CompletableFuture<Boolean> addServer(ClusterServer server){
         if(server == null){
