@@ -18,6 +18,7 @@
 package net.data.technology.jraft;
 
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -103,7 +104,31 @@ public class RaftClient {
 	        this.tryCurrentLeader(request, result, 0, 0);
 	        return result;
 		}
-
+	public CompletableFuture<Boolean> qPush(byte[][] queueId, byte[][] item) {
+		
+		if(queueId == null || queueId.length < 0){
+				throw new IllegalArgumentException("Queue Id must be equal or greater than zero");
+			}
+			if(item == null)
+			{
+				throw new IllegalArgumentException("Push item cannot be null");
+			}
+		    LogEntry[] logEntries = new LogEntry[queueId.length + item.length];
+		    for(int i = 0; i < queueId.length; ++i){
+	            logEntries[i] = new LogEntry(0, queueId[i],LogValueType.FTQueue);
+	        }
+		    for(int i = queueId.length; i < queueId.length+item.length; ++i){ 
+	            logEntries[i] = new LogEntry(0, item[i-queueId.length],LogValueType.FTQueue);
+	        }
+			RaftRequestMessage request = new RaftRequestMessage();
+	        request.setMessageType(RaftMessageType.QueuePushCreateRequest);
+	        request.setLogEntries(logEntries);
+	        
+	        CompletableFuture<Boolean> result = new CompletableFuture<Boolean>();
+	        this.tryCurrentLeader(request, result, 0, 0);
+	        return result;
+		}
+	
     public CompletableFuture<Boolean> addServer(ClusterServer server){
         if(server == null){
             throw new IllegalArgumentException("server cannot be null");

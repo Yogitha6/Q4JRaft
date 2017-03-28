@@ -120,6 +120,14 @@ public class App
             	boolean accepted = client.qId(new byte[][]{ text.trim().getBytes()}).get();
             	System.out.println("Accepted: " + String.valueOf(accepted));
             	continue;
+            }else if(message.startsWith("qPush:")){
+            	String text = message.substring(6);
+            	int colonposition = text.indexOf(";");
+            	String queueId = text.substring(0,colonposition);
+            	String pushItem = text.substring(colonposition+1);
+            	boolean accepted = client.qPush(new byte[][]{ queueId.trim().getBytes()}, new byte[][]{ pushItem.trim().getBytes()}).get();
+            	System.out.println("Accepted: " + String.valueOf(accepted));
+            	continue;
             }else if(message.startsWith("addsrv")){
                 StringTokenizer tokenizer = new StringTokenizer(message, ";");
                 ArrayList<String> values = new ArrayList<String>();

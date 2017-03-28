@@ -43,6 +43,7 @@ public int qId(int label)
 void qPush(int queue_id, int item)
 {
 	ftqueues.get(queue_id).queuePush(item);
+	System.out.println("Pushed "+item+" into queue with Id :"+queue_id);
 }
 
 // Removes an item from the queue
