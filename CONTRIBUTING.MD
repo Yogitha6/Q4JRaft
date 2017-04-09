@@ -2,12 +2,12 @@
 
 We welcome contributions to this open source project from anyone, in particular to students interested in learning distributed systems and consensus algorithms. One of the main objectives of Q4Jraft is to understand and learn about RAFT consensus algorithm. Here is some information that might be useful to everyone looking forward to becoming contributors for this project.
 
-* [Knowledge required] (#knwoledge-required)
-* [Getting started] (#getting-started)
-* [Filing a Bug Report] (#filing-a-bug-report)
-* [Suggesting new features] (#suggesting-new-features)
-* [Roadmap for this project] (#roadmap-for-this-project)
-* [Contact us] (#contact-us)
+* [Knowledge required](#knowledge-required)
+* [Getting started](#getting-started)
+* [Filing a Bug Report](#filing-a-bug-report)
+* [Suggesting new features](#suggesting-new-features)
+* [Roadmap for this project](#roadmap-for-this-project)
+* [Contact us](#contact-us)
 
 ## Knowledge required
 Knowledge of Java socket programming, theoretical understanding of RAFT consensus algorithm is required for anyone to be able to contribute to this project.
