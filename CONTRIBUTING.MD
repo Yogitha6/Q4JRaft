@@ -68,7 +68,7 @@ You can make suggestions on how this project can help people learn and use java 
 ## Roadmap for this project
 Following is a picture which talks about the scope, vision and goals of this project:
 
-![RoadMap.jpg](images/RoadMap.jpg)
+![RoadMap.JPG](images/RoadMap.JPG)
 
 ## Contact us
 The best way to contact us is by creating a new issue in the [issues section] (https://github.com/Yogitha6/Q4JRaft/issues/new). The issue tracker is used as a discussion forum. You can have a look at the existing discussions to get good insights on the code and features. You can also post a new issue for asking new questions about the code or for requesting any help.

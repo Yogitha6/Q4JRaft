@@ -1,4 +1,4 @@
-*This repository was made for HW3 and HW4 in Open Source Development course - CSCI 4830/7000 at University of Colorado Boulder.*
+**This repository was made for HW3 and HW4 in Open Source Development course - CSCI 4830/7000 at University of Colorado Boulder.**
 
 # **Q4JRaft**
 Q4JRaft is a distributed fault tolerant queue data structure built over java implementation of the RAFT distributed consensus algorithm - jraft. This code was written in an attempt to learn and understand RAFT algorithm in general and its implementation.
