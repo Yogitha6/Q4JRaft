@@ -1,51 +1,71 @@
-# jraft
-Raft consensus implementation in java
+# Q4JRaft
+Q4JRaft is a distributed fault tolerant queue data structure built over java implementation of the RAFT distributed consensus algorithm - jraft. This code was written in an attempt to learn and understand RAFT algorithm in general and its implementation.
 
-The core algorithm is implemented based on the TLA+ spec, whose safety is proven, and liveness is highly depended on the pseudo random number sequence, which could be fine if different servers in the same cluster are generating random numbers with different seeds.
+## Understanding RAFT
+### Simple Introduction about RAFT consensus algorithm:
+Consensus is a fundamental problem in fault-tolerant distributed systems. Consensus involves multiple servers agreeing on the same value to make decisions. Raft achieves consensus via an elected leader. A server in a raft cluster is either a leader, a candidate, or a follower. The leader is responsible for log replication to the followers. It regularly informs the followers of its existence by sending a heartbeat message. Each follower has a timeout (typically between 150 and 300 ms) in which it expects the heartbeat from the leader. The timeout is reset on receiving the heartbeat. If no heartbeat is received the follower changes its status to candidate and starts a new leader election.
 
-## Supported Features,
-- [x] Core Algorithm, safety is proven
-- [x] Configuration Change Support, add or remove servers one by one without limitation
-- [x] Client Request Support
-- [x] **Urgent commit**, see below
-- [x] log compaction 
+More information about RAFT and various open source implementations can be found here: 
+[Implementations](https://raft.github.io/)
+[Complete Information](https://en.wikipedia.org/wiki/Raft_(computer_science))
 
-> Urgent Commit, is a new feature introduced by this implementation, which enables the leader asks all other servers to commit one or more logs if commit index is advanced. With Urgent Commit, the system's performance is highly improved and the heartbeat interval could be increased to seconds,depends on how long your application can abide when a leader goes down, usually, one or two seconds is fine. 
+### JRAFT implementation
+jraft is a raft consensus implementation in java. Features supported by jraft implementation include:
+1. Core Algorithm, safety is proven
+2. Configure Change Support, add or remove servers one by one without limitation
+3. Client Request Support
+4. Urgent commit
+5. Log Compaction
 
-## About this implementation
-it's always safer to implement such kind of algorithm based on Math description other than natural languge description.
-there should be an auto conversion from TLA+ to programming languages, even they are talking things in different ways, but they are identical
+More information about jraft can be found [here](https://github.com/datatechnology/jraft) 
 
-> In the example of dmprinter (Distributed Message Printer), it takes about 4ms to commit a message, while in Active-Active scenario (sending messages to all three instances of dmprinter), it takes about 9ms to commit a message, the data is collected by CLT (Central Limitation Theory) with 95% of confidence level.
+## Details on Q4JRaft
+Q4JRaft was developed by extending jraft open source implementation of RAFT distributed consensus algorithm. Q4JRaft is a distributed fault-tolerant queue data structure, where the queue can be accessed normally as long as there are more than n/2 servers operational. (less than n/2 server crash failures in the system), where n is the number of operating servers.
 
-## Code Structure
-This project contains not that much code, as it's well abstracted, here is the project structure
-* **core**, the core algorithm implementation, you can go only with this, however, you need to implement the following interfaces,
-  1. **Logger** and **LoggerFactory**
-  2. **RpcClient** and **RpcClientFactory**
-  3. **RpcListener**
-  4. **ServerStateManager** and **SequentialLogStore**
-  5. **StateMachine**
-* **exts**, some implementations for the interfaces mentioned above, it provides TCP based CompletableFuture<T> enabled RPC client and server as well as **FileBasedSequentialLogStore**, with this, you will be able to implement your own system by only implement **StateMachine** interface
-* **dmprinter**, a sample application, as it's name, it's distributed message printer, for sample and testing.
-* **setup**, some scripts for Windows(R) platform to run **dmprinter**
+jraft implementation provides a dmprinter example where the system constitutes of one client and 3 servers. Client can send messages and commands to the leader. Leader sends precommit messages followed by AppendEntries request and commit messages to all the folllowers. Followers on receiving messages from Leader print them on their terminals. jraft implementation by default provides implementation to 2 commands: `addsrv`, `rmsrv` to add and remove servers from the cluster. 
 
-## Run dmprinter
-dmprinter is a distributed message printer which is used to verify the core implementation. A set of Windows(R) based setup scripts is shipped with this project, under **setup** folder.
-  1. Export three projects into  one executable jar file, called jraft.jar
-  2. start a command prompt, change directory to **setup** folder
-  3. run **setup.cmd**, it will start three instances of jraft
-  4. write a simple client by using python or whatever language you would love to to connect to any port between 8001 to 8003, which dmprinter is listening on. **message format** see below
-  5. you can call addsrv.cmd \<server-id-in-int\> to start new instance of raft and call addsrv:\<server-id-in-int\>,tcp://localhost:900\<server-id-in-int\> to join the server to cluster, e.g. **addsrv:4,tcp://localhost:9004** through the client, or remove a server from cluster **rmsrv,4**, check out more details about the message format as below,
-  
-> Message format \<header\>\<message\>
+To develop queue data structure over jraft, we implemented more commands using which client can send requests to the leader for the following operations with the queue data structure:
+1. Creation of a queue with a label
+2. Retrieving Id of the queue with a given label
+3. Pushing elements into the queue
+4. Poping elements out of the queue
+5. Retrieving the first top element in the queue
+6. Obtaining the size - number of items in a queue
 
-> \<header\> := four bytes, which is encoded from an integer in little-endian format, the integer is the bytes of the \<message\>
+## Setup
+Requirements: Java 1.8 is required; the following commands are for windows operating system.
+1. Change the directory to Q4JRaft\setup
 
-> \<message\> := \<id|command\>:\<content\>
+2. Run the `setup.bat` file – this will create 5 window terminals, where each terminal has a server running. The servers have Ids: 1,2,3,4,5 and they run on ports: 8001, 8002, 8003, 8004, 8005 respectively. Each server has a separate folder server1, server2, server3, server4, server 5 in the setup folder. These folders should have the cluster.json and config.properties files to work correctly.
 
-> \<id\> := uuid
+3. Once all the 5 servers are up and running, you can start the client by running the following command:
+`java -jar dmprinter.jar client Q4JRaft\setup\client`
+Note: You need to provide the full path to the directory
 
-> \<command\> := addsrv|rmsrv
+4. Once the client is up and running, we can send messages – simple text messages from client by just typing the message. This message is handled by the leader server, which replicates it at all the followers.
 
-> \<content\> := srvid,uri|srvid|any-string
+5. To add a server to the cluster, you need to first start a server in the same folder by:
+	1. First create a directory named server6 and copy the cluster.json and config.properties files from any other servers. Modify the entries with respect to server6.
+	2. After creating the server6 folder, run the following command:
+`java -jar dmprinter.jar server Q4JRaft\setup\server6 8006`
+
+	3. Once server6 is up and running, you can add this server to the already existing cluster by typing the following message at the client:
+`addsrv;6;tcp://localhost:9006`
+	4. To remove a server from existing cluster, you can run the following command at the client:
+`rmsrv:4`
+
+6. Now to do operations on the queue you can execute the 
+following commands at the client:
+	1. To create a queue with label 1 `qCreate:1`
+	2. To get id of the queue with label 1 `qId:1`
+	3. To push items into the queue with id 1 `qPush:1;2`
+	4. To pop items from the queue with Id 1 `qPop:1`
+	5. To see the top items from queue with id 1 `qTop:1`
+	6. To see the size of the queue with Id 1 `qSize:1`
+
+Note: When you execute these commands, you see each server terminal printing details like creation of queue, results of push, pop, top, size etc.,
+
+## Contacting us
+The best way to contact us is by creating a new issue in the issues section. The issue tracker is used as a discussion forum. You can have a look at the existing discussions to get good insights on the code and features. You can also post a new issue for asking new questions about the code or for requesting any help.
+
+You can also reach out to us at yogitha164@gmail.com (Less Preferred)
