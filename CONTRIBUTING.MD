@@ -66,9 +66,9 @@ Following describes the naming convention:
 You can make suggestions on how this project can help people learn and use java RAFT implementation for various scenarios. To make a new feature suggestion you can create a new issue with the labels: `Catg:NewFeatures`, `Exp:Contributors` and appropriate priority level. Please have a look at the roadmap (next section) of this project and make sure the new feature suggestion aligns with the road map of this project before creating an issue for new features.
 
 ## Roadmap for this project
-Following is a picture which talks about the scope and goals of this project:
+Following is a picture which talks about the scope, vision and goals of this project:
 
-![RoadmapforQ4Jraft.jpg](images/RoadMap.jpg)
+![RoadMap.jpg](images/RoadMap.jpg)
 
 ## Contact us
 The best way to contact us is by creating a new issue in the [issues section] (https://github.com/Yogitha6/Q4JRaft/issues/new). The issue tracker is used as a discussion forum. You can have a look at the existing discussions to get good insights on the code and features. You can also post a new issue for asking new questions about the code or for requesting any help.
