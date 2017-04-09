@@ -1,12 +1,14 @@
-# Q4JRaft
-Q4JRaft is a distributed fault tolerant queue data structure built over java implementation of the RAFT distributed consensus algorithm - jraft. This code was written in an attempt to learn and understand RAFT algorithm in general and its implementation.
+* This repository was made for HW3 and HW4 in Open Source Development course - CSCI 4830/7000 at University of Colorado Boulder.*
 
+# **Q4JRaft**
+Q4JRaft is a distributed fault tolerant queue data structure built over java implementation of the RAFT distributed consensus algorithm - jraft. This code was written in an attempt to learn and understand RAFT algorithm in general and its implementation.
+ 
 ## Understanding RAFT
 ### Simple Introduction about RAFT consensus algorithm:
 Consensus is a fundamental problem in fault-tolerant distributed systems. Consensus involves multiple servers agreeing on the same value to make decisions. Raft achieves consensus via an elected leader. A server in a raft cluster is either a leader, a candidate, or a follower. The leader is responsible for log replication to the followers. It regularly informs the followers of its existence by sending a heartbeat message. Each follower has a timeout (typically between 150 and 300 ms) in which it expects the heartbeat from the leader. The timeout is reset on receiving the heartbeat. If no heartbeat is received the follower changes its status to candidate and starts a new leader election.
 
 More information about RAFT and various open source implementations can be found here: 
-[Implementations](https://raft.github.io/)
+[Implementations](https://raft.github.io/) and 
 [Complete Information](https://en.wikipedia.org/wiki/Raft_(computer_science))
 
 ### JRAFT implementation
@@ -66,6 +68,6 @@ following commands at the client:
 Note: When you execute these commands, you see each server terminal printing details like creation of queue, results of push, pop, top, size etc.,
 
 ## Contacting us
-The best way to contact us is by creating a new issue in the issues section. The issue tracker is used as a discussion forum. You can have a look at the existing discussions to get good insights on the code and features. You can also post a new issue for asking new questions about the code or for requesting any help.
+The best way to contact us is by creating a new issue in the [issues section] (https://github.com/Yogitha6/Q4JRaft/issues/new). The issue tracker is used as a discussion forum. You can have a look at the existing discussions to get good insights on the code and features. You can also post a new issue for asking new questions about the code or for requesting any help.
 
 You can also reach out to us at yogitha164@gmail.com (Less Preferred)
