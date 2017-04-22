@@ -107,3 +107,8 @@
 2017-04-22 17:42:34,423 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
 2017-04-22 17:42:34,431 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-04-22 17:42:34,437 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-22 17:48:14,938 [Worker-58] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:jraft-exts:1.0.0 @ C:\Users\yogit\github\Q4JRaft\exts\pom.xml.
+2017-04-22 17:48:16,175 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-22 17:48:16,175 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-22 17:48:16,183 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-22 17:48:16,188 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
