@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.BinaryUtils"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.BinaryUtilTests"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.FileBasedSequentialLogStore"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.FileBasedSequentialLogStoreTests"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.FileBasedServerStateManagerTests"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.GsonSerializationTests"/>
+<fullyQualifiedTypeName name="net.data.technology.jraft.extensions.H2LogStoreTests"/>
+</qualifiedTypeNameHistroy>
