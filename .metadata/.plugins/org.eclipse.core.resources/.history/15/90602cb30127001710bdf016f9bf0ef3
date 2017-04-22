@@ -1,0 +1,10 @@
+package net.data.technology.jraft.tests;
+
+public class CoreTestRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

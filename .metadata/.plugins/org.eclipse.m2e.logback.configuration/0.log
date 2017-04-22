@@ -1,0 +1,91 @@
+2017-04-21 20:07:30,759 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-04-21 20:09:41,498 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:jraft-core:1.0.0 @ C:\Users\yogit\github\Q4JRaft\core\pom.xml.
+2017-04-21 20:09:45,272 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:45,272 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:09:45,275 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:45,276 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:09:47,568 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:dmprinter:1.0.0 @ C:\Users\yogit\github\Q4JRaft\dmprinter\pom.xml.
+2017-04-21 20:09:47,628 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for net.data-technology.jraft:jraft-exts:jar:1.0.0 is missing, no dependency information available
+2017-04-21 20:09:48,059 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:48,059 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\main\resources
+2017-04-21 20:09:48,062 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:48,062 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\test\resources
+2017-04-21 20:09:49,930 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:jraft-exts:1.0.0 @ C:\Users\yogit\github\Q4JRaft\exts\pom.xml.
+2017-04-21 20:09:51,614 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:dmprinter:1.0.0 @ C:\Users\yogit\github\Q4JRaft\dmprinter\pom.xml.
+2017-04-21 20:09:52,917 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:52,918 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:09:52,926 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:52,926 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:09:53,199 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.data-technology.jraft:jraft-core:1.0.0 @ C:\Users\yogit\github\Q4JRaft\core\pom.xml.
+2017-04-21 20:09:55,593 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:55,604 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:09:55,619 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:55,625 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:09:57,118 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:57,127 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:09:57,143 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:57,155 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:09:57,607 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:57,613 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\main\resources
+2017-04-21 20:09:57,614 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:09:57,614 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\test\resources
+2017-04-21 20:14:02,188 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:02,196 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\main\resources
+2017-04-21 20:14:02,203 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:02,207 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\test\resources
+2017-04-21 20:14:36,351 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:36,358 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\main\resources
+2017-04-21 20:14:36,376 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:36,382 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\test\resources
+2017-04-21 20:14:43,863 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:43,869 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\main\resources
+2017-04-21 20:14:43,876 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:14:43,882 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\dmprinter\src\test\resources
+2017-04-21 20:16:18,557 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:16:18,606 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:16:18,615 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:16:18,622 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:16:31,483 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:16:31,497 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:16:31,507 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:16:31,513 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:19:04,442 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:19:04,448 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:19:04,454 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:19:04,459 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:19:17,602 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:19:17,609 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:19:17,617 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:19:17,622 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
+2017-04-21 20:20:07,519 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:07,523 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:20:07,532 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:07,537 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:20:17,980 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:17,985 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:20:17,991 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:17,998 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:20:35,960 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:35,967 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:20:35,974 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:35,980 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:20:43,647 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:43,651 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:20:43,656 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:20:43,662 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:21:07,810 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:21:07,816 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:21:07,820 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:21:07,824 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:21:51,798 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:21:51,805 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:21:51,812 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:21:51,816 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:22:10,948 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:22:10,963 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\main\resources
+2017-04-21 20:22:10,972 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:22:10,980 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\exts\src\test\resources
+2017-04-21 20:35:35,755 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:35:35,756 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\main\resources
+2017-04-21 20:35:35,763 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-04-21 20:35:35,770 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yogit\github\Q4JRaft\core\src\test\resources
